@@ -24,24 +24,38 @@ export default function SignupPage() {
     try {
       const supabase = createClient()
       
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            full_name: fullName,
-          },
-        },
+      // Step 1: Create the user via admin API (no email confirmation needed)
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          password,
+          fullName,
+        }),
       })
 
-      if (error) {
-        setError(error.message)
-      } else {
-        router.push('/app')
-        router.refresh()
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create account')
       }
-    } catch (err) {
-      setError('An unexpected error occurred')
+
+      // Step 2: Sign in with the new account
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+
+      if (signInError) {
+        throw new Error(signInError.message)
+      }
+
+      // Step 3: Redirect to app
+      router.push('/app')
+      router.refresh()
+    } catch (err: any) {
+      setError(err.message)
     } finally {
       setLoading(false)
     }

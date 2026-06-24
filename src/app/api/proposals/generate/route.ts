@@ -329,7 +329,7 @@ Let's schedule a quick call — I have availability this ${new Date().toLocaleDa
   }
   
   // 定价建议
-  const budgetNums = jd.match(/\d+/g) || []
+  const budgetNums = jd.match(/\d+/g)?.map(Number) || []
   const maxBudget = Math.max(0, ...budgetNums)
   
   const pricingAdvice = {

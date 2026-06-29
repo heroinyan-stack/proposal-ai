@@ -7,7 +7,9 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: NextRequest) {
   try {
     const payload = await request.text()
-    const signature = request.headers.get('creem-signature') || ''
+    const signature = request.headers.get('creem-signature') 
+      || request.headers.get('x-creem-signature') 
+      || ''
 
     const secret = process.env.CREEM_WEBHOOK_SECRET
     
@@ -24,8 +26,10 @@ export async function POST(request: NextRequest) {
     }
 
     const event = JSON.parse(payload)
-    const eventType = event.type
-    const userId = event.data?.metadata?.user_id
+    const eventType = event.eventType || event.type
+    const data = event.object || event.data || {}
+    
+    const userId = data.metadata?.user_id || data.request_id
 
     if (!userId) {
       console.error('No user_id in webhook metadata')
@@ -36,16 +40,15 @@ export async function POST(request: NextRequest) {
 
     console.log(`Creem webhook: ${eventType} for user ${userId}`)
 
+    const productId = data.product_id || data.product?.id
+    const subscriptionId = data.subscription?.id || data.id
+    const customerId = data.customer?.id || data.customer_id
+
+    const isYearly = productId === process.env.CREEM_PRO_YEARLY_PRODUCT_ID
+    const tier = isYearly ? 'pro_yearly' : 'pro'
+
     switch (eventType) {
       case 'checkout.completed': {
-        const productId = event.data?.product_id
-        const subscriptionId = event.data?.subscription_id
-        const customerEmail = event.data?.customer_email
-        const customerId = event.data?.customer_id
-
-        const isYearly = productId === process.env.CREEM_PRO_YEARLY_PRODUCT_ID
-        const tier = isYearly ? 'pro_yearly' : 'pro'
-
         const { error } = await supabase
           .from('profiles')
           .update({
@@ -69,13 +72,6 @@ export async function POST(request: NextRequest) {
 
       case 'subscription.active':
       case 'subscription.paid': {
-        const subscriptionId = event.data?.id || event.data?.subscription_id
-        const productId = event.data?.product_id
-        const customerId = event.data?.customer_id
-
-        const isYearly = productId === process.env.CREEM_PRO_YEARLY_PRODUCT_ID
-        const tier = isYearly ? 'pro_yearly' : 'pro'
-
         const { error } = await supabase
           .from('profiles')
           .update({
@@ -100,9 +96,7 @@ export async function POST(request: NextRequest) {
       case 'subscription.canceled':
       case 'subscription.expired':
       case 'subscription.past_due': {
-        const status = event.data?.status || eventType.replace('subscription.', '')
-        const subscriptionId = event.data?.id || event.data?.subscription_id
-
+        const status = data.status || eventType.replace('subscription.', '')
         const { error } = await supabase
           .from('profiles')
           .update({
@@ -124,13 +118,8 @@ export async function POST(request: NextRequest) {
       }
 
       case 'subscription.update': {
-        const productId = event.data?.product_id
-        const status = event.data?.status
-
+        const status = data.status
         if (status === 'active') {
-          const isYearly = productId === process.env.CREEM_PRO_YEARLY_PRODUCT_ID
-          const tier = isYearly ? 'pro_yearly' : 'pro'
-
           const { error } = await supabase
             .from('profiles')
             .update({
@@ -148,6 +137,25 @@ export async function POST(request: NextRequest) {
         }
 
         console.log(`Subscription updated for user ${userId}`)
+        break
+      }
+
+      case 'subscription.trialing': {
+        const { error } = await supabase
+          .from('profiles')
+          .update({
+            subscription_status: 'trialing',
+            subscription_tier: tier,
+            credits_remaining: 99999,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', userId)
+
+        if (error) {
+          console.error('Error updating trialing subscription:', error)
+          return NextResponse.json({ error: 'Failed to update user' }, { status: 500 })
+        }
+        console.log(`Trial started for user ${userId}`)
         break
       }
 

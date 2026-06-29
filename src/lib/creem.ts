@@ -54,7 +54,6 @@ export async function createCheckoutSession(options: CreemCheckoutOptions) {
     body: JSON.stringify({
       product_id: productId,
       success_url: successUrl || `${baseUrl}/checkout/success`,
-      cancel_url: cancelUrl || `${baseUrl}/pricing`,
       customer: {
         email: userEmail,
         name: userName,
@@ -71,7 +70,7 @@ export async function createCheckoutSession(options: CreemCheckoutOptions) {
   }
 
   const data = await response.json()
-  return data.url || data.data?.url
+  return data.checkout_url || data.url || data.data?.url
 }
 
 export async function cancelSubscription(subscriptionId: string) {

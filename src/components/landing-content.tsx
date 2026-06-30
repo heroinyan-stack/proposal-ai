@@ -443,6 +443,97 @@ export function LandingPageContent() {
         </div>
       </section>
 
+      {/* Blog / Resources */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Resources</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3 mb-4">
+              Level up your freelance game
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Templates, examples, and step-by-step guides to help you win more contracts and earn more on Upwork.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link
+              href="/blog/upwork-proposal-templates"
+              className="group block bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow border border-slate-200"
+            >
+              <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">
+                Templates
+              </span>
+              <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                5 Upwork Proposal Templates That Win
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                Copy-paste templates proven templates for web design, writing, dev, and more.
+              </p>
+              <div className="mt-4 text-sm font-medium text-indigo-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                Read more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+
+            <Link
+              href="/blog/upwork-cover-letter-examples"
+              className="group block bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow border border-slate-200"
+            >
+              <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">
+                Examples
+              </span>
+              <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                7 Upwork Cover Letter Examples That Work
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                Real samples from top-rated freelancers. See exactly what gets responses.
+              </p>
+              <div className="mt-4 text-sm font-medium text-indigo-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                Read more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+
+            <Link
+              href="/blog/how-to-get-first-job-on-upwork"
+              className="group block bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow border border-slate-200"
+            >
+              <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">
+                Guides
+              </span>
+              <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                How to Get Your First Upwork Job
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                10-step guide for beginners. No experience? No problem. Follow this roadmap.
+              </p>
+              <div className="mt-4 text-sm font-medium text-indigo-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                Read more
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/blog">
+              <Button variant="outline" size="lg">
+            View all resources
+            <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Footer } from '@/components/footer'
 
 export const metadata = {
   title: 'About - ProposalAI',
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -29,7 +30,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <main className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <div className="bg-white rounded-2xl shadow-sm p-10 md:p-14">
           <h1 className="text-4xl font-bold text-slate-900 mb-8">About ProposalAI</h1>
           
@@ -53,6 +54,8 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

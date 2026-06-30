@@ -131,7 +131,7 @@ export function LandingPageContent() {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-8">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              Used by 2,300+ Upwork freelancers
+              AI-powered proposal generator for freelancers
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-[1.05] tracking-tight">
@@ -542,7 +542,7 @@ export function LandingPageContent() {
             Stop guessing. Start winning.
           </h2>
           <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-            Join 2,300+ freelancers who send better proposals in less time. Free forever plan — no credit card required.
+            Join thousands of freelancers who send better proposals in less time. Free forever plan — no credit card required.
           </p>
           <Link href="/auth/signup">
             <Button size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50 text-lg px-10 h-14 shadow-2xl">

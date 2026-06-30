@@ -18,8 +18,11 @@ export function Footer() {
               AI-powered proposal generator for Upwork and Fiverr freelancers. 
               Win more contracts in less time.
             </p>
+            <p className="mt-4 text-sm">
+              Support: <a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">support@proposalai.top</a>
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <h4 className="text-white font-medium mb-3">Product</h4>
               <ul className="space-y-2 text-sm">
@@ -47,14 +50,22 @@ export function Footer() {
                 <li><Link href="/blog/upwork-proposal-templates" className="hover:text-white transition-colors">Marketing</Link></li>
               </ul>
             </div>
+            <div>
+              <h4 className="text-white font-medium mb-3">Legal</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">Contact Us</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>© {new Date().getFullYear()} ProposalAI. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-white transition-colors">Contact</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
       </div>

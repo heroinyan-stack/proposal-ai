@@ -57,14 +57,6 @@ export const metadata: Metadata = {
     title: "ProposalAI - AI Proposal Generator for Upwork & Fiverr Freelancers",
     description:
       "Win 3x more Upwork and Fiverr contracts with AI-optimized proposals. Generate 3 versions in 30 seconds with client analysis, keyword optimization, and pricing advice.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ProposalAI - AI Proposal Generator",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -72,7 +64,6 @@ export const metadata: Metadata = {
     description:
       "Win 3x more freelance contracts with AI-optimized proposals. Generate Upwork cover letters in 30 seconds.",
     creator: "@proposalai",
-    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "/",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 export const metadata = {
   title: "How to Write an Upwork Profile Summary That Gets Clients",
@@ -35,6 +36,28 @@ export default function BlogPost() {
           </div>
         </div>
       </header>
+
+      <nav className="bg-white border-b border-slate-200">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <ol className="flex items-center gap-2 text-sm text-slate-500">
+            <li>
+              <Link href="/" className="hover:text-indigo-600 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="/blog" className="hover:text-indigo-600 transition-colors">
+                Blog
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-slate-900 font-medium">
+              How to Write an Upwork Profile Summary That Gets Clients
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         <div className="mb-8">
@@ -407,6 +430,79 @@ export default function BlogPost() {
         </div>
       </article>
 
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://proposalai.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://proposalai.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "How to Write an Upwork Profile Summary That Gets Clients",
+                item: "https://proposalai.com/blog/upwork-profile-summary-examples",
+              },
+            ],
+          }),
+        }}
+      />
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "How to Write an Upwork Profile Summary That Gets Clients",
+            description:
+              "Learn how to write an Upwork profile summary that converts visitors into clients. 5 copy-paste profile examples for developers, designers, writers, marketers, and VAs, plus SEO and rate tips.",
+            image: [
+              "https://proposalai.com/og-image.png",
+            ],
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            author: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              url: "https://proposalai.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proposalai.com/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://proposalai.com/blog/upwork-profile-summary-examples",
+            },
+            keywords: [
+              "upwork profile summary",
+              "upwork profile examples",
+              "upwork profile tips",
+              "upwork profile description",
+              "how to write upwork profile",
+            ],
+            articleSection: "Guides",
+          }),
+        }}
+      />
       <Footer />
     </div>
   );

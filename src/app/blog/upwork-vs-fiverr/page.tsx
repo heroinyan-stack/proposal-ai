@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 export const metadata = {
   title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
@@ -36,7 +37,27 @@ export default function BlogPost() {
         </div>
       </header>
 
-      <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+      <nav className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-8">
+        <ol className="flex items-center gap-2 text-sm text-slate-500">
+          <li>
+            <Link href="/" className="hover:text-indigo-600 transition-colors">
+              Home
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href="/blog" className="hover:text-indigo-600 transition-colors">
+              Blog
+            </Link>
+          </li>
+          <li>/</li>
+          <li className="text-slate-700 font-medium">
+            Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?
+          </li>
+        </ol>
+      </nav>
+
+      <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="mb-8">
           <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
             Guides
@@ -418,6 +439,77 @@ export default function BlogPost() {
         </div>
       </article>
 
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://proposalai.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://proposalai.com/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+                "item": "https://proposalai.com/blog/upwork-vs-fiverr"
+              }
+            ]
+          })
+        }}
+      />
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+            "description": "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
+            "image": "https://proposalai.com/og-image.png",
+            "datePublished": "2025-07-02",
+            "dateModified": "2025-07-02",
+            "author": {
+              "@type": "Organization",
+              "name": "ProposalAI"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "ProposalAI",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://proposalai.com/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://proposalai.com/blog/upwork-vs-fiverr"
+            },
+            "keywords": [
+              "upwork vs fiverr",
+              "fiverr vs upwork",
+              "best freelance platform 2025",
+              "upwork or fiverr",
+              "freelance platforms compared"
+            ],
+            "articleSection": "Guides"
+          })
+        }}
+      />
       <Footer />
     </div>
   );

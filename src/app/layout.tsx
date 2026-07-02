@@ -67,6 +67,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": [
+        {
+          url: "/feed.xml",
+          title: "ProposalAI Blog RSS Feed",
+        },
+      ],
+    },
   },
   verification: {
     google: "google-site-verification-code",

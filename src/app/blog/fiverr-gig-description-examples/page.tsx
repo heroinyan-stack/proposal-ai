@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 export const metadata = {
   title: "7 Fiverr Gig Description Examples That Convert (2025)",
@@ -35,6 +36,28 @@ export default function BlogPost() {
           </div>
         </div>
       </header>
+
+      <nav className="bg-white border-b border-slate-200">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <ol className="flex items-center gap-2 text-sm text-slate-500">
+            <li>
+              <Link href="/" className="hover:text-indigo-600 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="/blog" className="hover:text-indigo-600 transition-colors">
+                Blog
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-slate-900 font-medium">
+              7 Fiverr Gig Description Examples That Convert (2025)
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         <div className="mb-8">
@@ -481,6 +504,79 @@ export default function BlogPost() {
         </div>
       </article>
 
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://proposalai.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://proposalai.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "7 Fiverr Gig Description Examples That Convert (2025)",
+                item: "https://proposalai.com/blog/fiverr-gig-description-examples",
+              },
+            ],
+          }),
+        }}
+      />
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "7 Fiverr Gig Description Examples That Convert (2025)",
+            description:
+              "Copy-paste these proven Fiverr gig description examples for logo design, WordPress, SEO, video editing, writing, voice over, and social media. Learn what makes buyers click Order Now.",
+            image: [
+              "https://proposalai.com/og-image.png",
+            ],
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            author: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              url: "https://proposalai.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proposalai.com/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://proposalai.com/blog/fiverr-gig-description-examples",
+            },
+            keywords: [
+              "fiverr gig description",
+              "fiverr gig template",
+              "how to write fiverr gig description",
+              "fiverr gig description examples",
+              "best fiverr gigs",
+            ],
+            articleSection: "Templates",
+          }),
+        }}
+      />
       <Footer />
     </div>
   );

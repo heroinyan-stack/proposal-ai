@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 export const metadata = {
   title: "How to Get Your First Job on Upwork (10 Steps for Newbies)",
@@ -36,7 +37,23 @@ export default function BlogPost() {
         </div>
       </header>
 
-      <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+      <nav className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <ol className="flex items-center gap-2 text-sm text-slate-500">
+          <li>
+            <Link href="/" className="hover:text-indigo-600 transition-colors">Home</Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href="/blog" className="hover:text-indigo-600 transition-colors">Blog</Link>
+          </li>
+          <li>/</li>
+          <li className="text-slate-900 font-medium truncate">
+            {metadata.title}
+          </li>
+        </ol>
+      </nav>
+
+      <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="mb-8">
           <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
             Guides
@@ -340,6 +357,70 @@ export default function BlogPost() {
           </Link>
         </div>
       </article>
+
+      <Script
+        id="breadcrumb-list"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://proposalai.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://proposalai.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: metadata.title,
+                item: "https://proposalai.com/blog/how-to-get-first-job-on-upwork",
+              },
+            ],
+          }),
+        }}
+      />
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: metadata.title,
+            description: metadata.description,
+            image: "https://proposalai.com/og-image.png",
+            datePublished: "2025-06-30",
+            dateModified: "2025-06-30",
+            author: {
+              "@type": "Organization",
+              name: "ProposalAI Team",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proposalai.com/logo.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://proposalai.com/blog/how-to-get-first-job-on-upwork",
+            },
+            keywords: metadata.keywords.join(", "),
+            articleSection: "Guides",
+          }),
+        }}
+      />
 
       <Footer />
     </div>

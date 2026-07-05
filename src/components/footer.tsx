@@ -21,6 +21,9 @@ export function Footer() {
             <p className="mt-4 text-sm">
               Support: <a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">support@proposalai.top</a>
             </p>
+            <p className="mt-3 text-xs text-slate-500">
+              Powered by Anthropic Claude AI. <Link href="/about" className="hover:text-slate-300 underline">Learn more</Link>.
+            </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>

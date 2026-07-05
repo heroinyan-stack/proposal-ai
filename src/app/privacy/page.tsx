@@ -88,7 +88,7 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="text-slate-700 font-medium">
-              Email: support@proposalai.top
+              Email: 332847952@qq.com
             </p>
 
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Changes to This Policy</h2>

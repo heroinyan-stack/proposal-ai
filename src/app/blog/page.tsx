@@ -89,12 +89,19 @@ export default function BlogIndex() {
               </div>
               <span className="text-xl font-bold text-slate-900">ProposalAI</span>
             </Link>
+            
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Pricing</Link>
+              <Link href="/blog" className="text-indigo-600 font-medium text-sm">Blog</Link>
+              <Link href="/about" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">About</Link>
+            </div>
+            
             <div className="flex items-center gap-3">
-              <Link href="/pricing">
-                <Button variant="ghost" size="sm">Pricing</Button>
-              </Link>
               <Link href="/auth/login">
-                <Button size="sm">Sign In</Button>
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button size="sm">Get Started</Button>
               </Link>
             </div>
           </div>

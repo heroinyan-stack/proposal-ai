@@ -21,9 +21,19 @@ export default function TermsPage() {
               </div>
               <span className="text-xl font-bold text-slate-900">ProposalAI</span>
             </Link>
+            
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Pricing</Link>
+              <Link href="/blog" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Blog</Link>
+              <Link href="/about" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">About</Link>
+            </div>
+            
             <div className="flex items-center gap-3">
-              <Link href="/">
-                <Button variant="ghost" size="sm">Back</Button>
+              <Link href="/auth/login">
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button size="sm">Get Started</Button>
               </Link>
             </div>
           </div>
@@ -109,7 +119,7 @@ export default function TermsPage() {
               If you have any questions about these Terms of Service, please contact us at:
             </p>
             <p className="text-slate-700 font-medium mb-4">
-              Email: support@proposalai.top
+              Email: 332847952@qq.com
             </p>
           </div>
 

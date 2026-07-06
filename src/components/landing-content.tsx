@@ -542,7 +542,7 @@ export function LandingPageContent() {
             Stop guessing. Start winning.
           </h2>
           <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
-            Join thousands of freelancers who send better proposals in less time. Free forever plan — no credit card required.
+            Start sending better proposals in less time. Free forever plan — no credit card required.
           </p>
           <Link href="/auth/signup">
             <Button size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50 text-lg px-10 h-14 shadow-2xl">

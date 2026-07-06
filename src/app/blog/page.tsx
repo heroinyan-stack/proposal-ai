@@ -18,6 +18,38 @@ const posts = [
     category: "Mistakes",
   },
   {
+    slug: "fiverr-gig-description-examples",
+    title: "7 Fiverr Gig Description Examples That Convert (2025)",
+    excerpt:
+      "See real Fiverr gig description templates for logo design, development, SEO, video editing, and more. Learn why they convert.",
+    readTime: "10 min",
+    category: "Templates",
+  },
+  {
+    slug: "upwork-profile-summary-examples",
+    title: "How to Write an Upwork Profile Summary That Gets Clients",
+    excerpt:
+      "Your profile summary is your first impression. Learn the 5 elements of a great summary with examples for 5 different careers.",
+    readTime: "8 min",
+    category: "Guides",
+  },
+  {
+    slug: "upwork-vs-fiverr",
+    title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+    excerpt:
+      "Full comparison of fees, project types, client quality, and competition. Find out which platform fits your freelance business.",
+    readTime: "11 min",
+    category: "Guides",
+  },
+  {
+    slug: "freelance-pricing-strategies",
+    title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+    excerpt:
+      "Stop undercharging. Learn hourly vs fixed vs value-based pricing, rate benchmarks for 2025, and how to raise your rates.",
+    readTime: "10 min",
+    category: "Guides",
+  },
+  {
     slug: "upwork-proposal-templates",
     title: "5 Upwork Proposal Templates That Actually Win Jobs (2025)",
     excerpt:
@@ -57,12 +89,19 @@ export default function BlogIndex() {
               </div>
               <span className="text-xl font-bold text-slate-900">ProposalAI</span>
             </Link>
+            
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Pricing</Link>
+              <Link href="/blog" className="text-indigo-600 font-medium text-sm">Blog</Link>
+              <Link href="/about" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">About</Link>
+            </div>
+            
             <div className="flex items-center gap-3">
-              <Link href="/pricing">
-                <Button variant="ghost" size="sm">Pricing</Button>
-              </Link>
               <Link href="/auth/login">
-                <Button size="sm">Sign In</Button>
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button size="sm">Get Started</Button>
               </Link>
             </div>
           </div>

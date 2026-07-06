@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { createClient } from '@/utils/supabase/client'
+import { Footer } from '@/components/footer'
 
 export default function SignupPage() {
   const [email, setEmail] = useState('')
@@ -19,6 +20,16 @@ export default function SignupPage() {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters')
+      return
+    }
+    if (!/(?=.*[a-z])(?=.*[A-Z])/.test(password)) {
+      setError('Password must contain both uppercase and lowercase letters')
+      return
+    }
+
     setLoading(true)
 
     try {
@@ -62,8 +73,9 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <div className="flex-1 flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
             <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
@@ -112,7 +124,7 @@ export default function SignupPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                helperText="Must be at least 6 characters"
+                helperText="At least 8 characters with uppercase and lowercase"
                 required
               />
 
@@ -122,7 +134,15 @@ export default function SignupPage() {
             </form>
 
             <p className="mt-4 text-xs text-slate-500 text-center">
-              By signing up, you agree to our Terms of Service and Privacy Policy.
+              By signing up, you agree to our{' '}
+              <Link href="/terms" className="text-indigo-600 hover:text-indigo-700 font-medium">
+                Terms of Service
+              </Link>{' '}
+              and{' '}
+              <Link href="/privacy" className="text-indigo-600 hover:text-indigo-700 font-medium">
+                Privacy Policy
+              </Link>
+              .
             </p>
 
             <div className="mt-6 text-center text-sm">
@@ -133,7 +153,10 @@ export default function SignupPage() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

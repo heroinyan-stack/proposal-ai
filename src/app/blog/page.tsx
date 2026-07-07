@@ -10,6 +10,14 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-mistakes",
+    title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+    excerpt:
+      "Discover the top 10 mistakes that destroy your chances of getting hired on Upwork. Learn exactly what to avoid and how to fix them to win more contracts.",
+    readTime: "10 min",
+    category: "Mistakes",
+  },
+  {
     slug: "upwork-proposal-templates",
     title: "5 Upwork Proposal Templates That Actually Win Jobs (2025)",
     excerpt:

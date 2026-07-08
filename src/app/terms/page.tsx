@@ -119,7 +119,7 @@ export default function TermsPage() {
               If you have any questions about these Terms of Service, please contact us at:
             </p>
             <p className="text-slate-700 font-medium mb-4">
-              Email: 332847952@qq.com
+              Email: heroinyan@gmail.com
             </p>
           </div>
 

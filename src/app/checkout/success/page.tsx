@@ -116,7 +116,7 @@ export default function CheckoutSuccessPage() {
               </Link>
               
               <p className="text-xs text-slate-500">
-                Need help? Contact us at 332847952@qq.com
+                Need help? Contact us at heroinyan@gmail.com
               </p>
             </div>
           </CardContent>

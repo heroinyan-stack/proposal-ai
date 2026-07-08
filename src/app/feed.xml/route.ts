@@ -96,7 +96,7 @@ export async function GET() {
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml" />
     <generator>Next.js</generator>
-    <webMaster>332847952@qq.com (ProposalAI Team)</webMaster>
+    <webMaster>heroinyan@gmail.com (ProposalAI Team)</webMaster>
 ${feedItems}
   </channel>
 </rss>`;

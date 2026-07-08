@@ -10,6 +10,14 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-connects-tips",
+    title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+    excerpt:
+      "Master Upwork Connects: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects.",
+    readTime: "12 min",
+    category: "Guides",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:

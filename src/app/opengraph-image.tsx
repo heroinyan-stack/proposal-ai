@@ -76,7 +76,7 @@ export default function Image() {
         {/* Feature pills */}
         <div style={{ display: "flex", gap: 16 }}>
           {[
-            "3x More Contracts",
+            "Smart Proposals",
             "30-Second Generation",
             "Client Analysis",
           ].map((text) => (

@@ -88,6 +88,8 @@ export default function TermsPage() {
             </p>
             <ul className="list-disc pl-6 mb-4 text-slate-700 space-y-2">
               <li>Generate spam, fraudulent, or misleading proposals</li>
+              <li>Generate or distribute NSFW (Not Safe For Work) content, including sexually explicit material, adult content, or graphic violence</li>
+              <li>Create content that is illegal, harmful, threatening, abusive, harassing, or discriminatory</li>
               <li>Violate any intellectual property rights</li>
               <li>Upload malicious code or content</li>
               <li>Attempt to gain unauthorized access to our systems</li>

@@ -38,8 +38,8 @@ const beforeAfter = {
 
 const features = [
   {
-    title: 'Upwork Algorithm Optimization',
-    description: 'We reverse-engineered what Upwork\'s ranking algorithm looks for. Our proposals are built to pass keyword density checks and get shown to clients first.',
+    title: 'Smart Keyword Optimization',
+    description: 'Our AI analyzes job descriptions and identifies relevant keywords to include in your proposal, helping you craft more targeted and relevant responses.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -74,8 +74,8 @@ const features = [
     ),
   },
   {
-    title: 'Keyword Density Score',
-    description: 'Upwork\'s algorithm ranks proposals by how well they match the job description. We give you a score and tell you exactly which keywords to include.',
+    title: 'Keyword Relevance Score',
+    description: 'We analyze your proposal against the job description and give you a relevance score, plus suggestions for keywords to include to make your proposal more targeted.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
@@ -145,7 +145,7 @@ export function LandingPageContent() {
             <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
               AI-powered proposals optimized for Upwork\'s algorithm. Paste a job → get 3 versions with client analysis, pricing advice, and keyword optimization.
               <br className="hidden md:block" />
-              <span className="font-semibold text-slate-700">3x more replies, 90% less time.</span>
+              <span className="font-semibold text-slate-700">Craft better proposals, faster.</span>
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

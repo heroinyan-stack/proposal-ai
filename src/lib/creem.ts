@@ -25,9 +25,14 @@ export interface CreemWebhookEvent {
   created: number
 }
 
-const CREEM_BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://api.creem.io/v1'
-  : 'https://test-api.creem.io/v1'
+// Allow explicit override via CREEM_TEST_MODE env var
+// If CREEM_TEST_MODE=true, use test API regardless of NODE_ENV
+const isTestMode = process.env.CREEM_TEST_MODE === 'true' ||
+  (process.env.NODE_ENV !== 'production' && process.env.CREEM_TEST_MODE !== 'false')
+
+const CREEM_BASE_URL = isTestMode
+  ? 'https://test-api.creem.io/v1'
+  : 'https://api.creem.io/v1'
 
 const CREEM_API_KEY = process.env.CREEM_API_KEY || ''
 
@@ -65,12 +70,34 @@ export async function createCheckoutSession(options: CreemCheckoutOptions) {
   })
 
   if (!response.ok) {
-    const error = await response.json()
-    throw new Error(`Creem checkout creation failed: ${JSON.stringify(error)}`)
+    let errorMessage = `Creem API returned ${response.status}`
+    try {
+      const error = await response.json()
+      errorMessage = error.message || error.error || JSON.stringify(error)
+    } catch {
+      try {
+        const text = await response.text()
+        errorMessage = text || errorMessage
+      } catch {}
+    }
+    console.error('Creem checkout error details:', {
+      status: response.status,
+      message: errorMessage,
+      apiUrl: CREEM_BASE_URL,
+      productId: productId,
+    })
+    throw new Error(`Payment error: ${errorMessage}`)
   }
 
   const data = await response.json()
-  return data.checkout_url || data.url || data.data?.url
+  const checkoutUrl = data.checkout_url || data.url || data.data?.url
+  
+  if (!checkoutUrl) {
+    console.error('Creem response missing checkout URL:', data)
+    throw new Error('Payment provider did not return a checkout URL')
+  }
+  
+  return checkoutUrl
 }
 
 export async function cancelSubscription(subscriptionId: string) {

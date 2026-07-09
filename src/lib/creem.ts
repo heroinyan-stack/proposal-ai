@@ -61,10 +61,10 @@ export async function createCheckoutSession(options: CreemCheckoutOptions) {
       success_url: successUrl || `${baseUrl}/checkout/success`,
       customer: {
         email: userEmail,
-        name: userName,
       },
       metadata: {
         user_id: userId,
+        user_name: userName || '',
       },
     }),
   })

@@ -33,8 +33,6 @@ export default function SignupPage() {
     setLoading(true)
 
     try {
-      const supabase = createClient()
-      
       // Step 1: Create the user via admin API (no email confirmation needed)
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
@@ -52,14 +50,33 @@ export default function SignupPage() {
         throw new Error(data.error || 'Failed to create account')
       }
 
-      // Step 2: Sign in with the new account
-      const { error: signInError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
+      // Step 2: Sign in with the new account (with retry)
+      const supabase = createClient()
+      let signInError = null
+      
+      for (let attempt = 0; attempt < 3; attempt++) {
+        // Small delay before retry to allow Supabase to propagate
+        if (attempt > 0) {
+          await new Promise(r => setTimeout(r, 1000 * attempt))
+        }
+        
+        const result = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        })
+        
+        if (!result.error) {
+          signInError = null
+          break
+        }
+        signInError = result.error
+        console.log(`Sign-in attempt ${attempt + 1} failed:`, signInError.message)
+      }
 
       if (signInError) {
-        throw new Error(signInError.message)
+        // If sign-in fails, redirect to login page with a helpful message
+        router.push('/auth/login?message=Account created! Please sign in with your credentials')
+        return
       }
 
       // Step 3: Redirect to app

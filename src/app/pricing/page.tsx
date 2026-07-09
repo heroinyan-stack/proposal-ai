@@ -86,16 +86,20 @@ export default function PricingPage() {
 
       if (!response.ok) {
         if (response.status === 401) {
-          router.push('/auth/login')
+          router.push('/auth/login?message=Please sign in to upgrade your plan')
           return
         }
         throw new Error(data.error || 'Failed to create checkout')
       }
 
+      if (!data.url) {
+        throw new Error('No checkout URL returned. Please contact support.')
+      }
+
       window.location.href = data.url
-    } catch (error) {
+    } catch (error: any) {
       console.error('Checkout error:', error)
-      alert('Failed to start checkout. Please try again.')
+      alert(error.message || 'Failed to start checkout. Please try again.')
     } finally {
       setLoadingPlan(null)
     }

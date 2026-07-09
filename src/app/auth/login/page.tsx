@@ -13,10 +13,17 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [forgotMode, setForgotMode] = useState(false)
   const [forgotSent, setForgotSent] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const msg = params.get('message')
+    if (msg) setMessage(msg)
+  }, [])
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -121,10 +128,16 @@ export default function LoginPage() {
             ) : (
               <form onSubmit={forgotMode ? handleForgotPassword : handleLogin} className="space-y-4">
                 {error && (
-                  <div className="bg-red-50 text-red-600 px-4 py-3 rounded-lg text-sm">
-                    {error}
-                  </div>
-                )}
+              <div className="bg-red-50 text-red-600 px-4 py-3 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
+
+            {message && !error && (
+              <div className="bg-emerald-50 text-emerald-700 px-4 py-3 rounded-lg text-sm">
+                {message}
+              </div>
+            )}
                 
                 <Input
                   label="Email"

@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { createClient } from '@/utils/supabase/client'
 import Script from 'next/script'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
@@ -65,7 +66,15 @@ const plans = [
 
 export default function PricingPage() {
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null)
+  const [currentUser, setCurrentUser] = useState<any>(null)
   const router = useRouter()
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setCurrentUser(user)
+    })
+  }, [])
 
   const handleUpgrade = async (planId: string) => {
     if (planId === 'free') {
@@ -127,12 +136,20 @@ export default function PricingPage() {
               <Link href="/about">
                 <Button variant="ghost" size="sm">About</Button>
               </Link>
-              <Link href="/auth/login">
-                <Button variant="ghost" size="sm">Log In</Button>
-              </Link>
-              <Link href="/auth/signup">
-                <Button size="sm">Get Started</Button>
-              </Link>
+              {currentUser ? (
+                <Link href="/app">
+                  <Button size="sm">Go to App</Button>
+                </Link>
+              ) : (
+                <>
+                  <Link href="/auth/login">
+                    <Button variant="ghost" size="sm">Log In</Button>
+                  </Link>
+                  <Link href="/auth/signup">
+                    <Button size="sm">Get Started</Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

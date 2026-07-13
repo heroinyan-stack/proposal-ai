@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
+import { createClient } from '@/utils/supabase/client'
 
 const painPoints = [
   {
@@ -119,6 +120,14 @@ const faqs = [
 
 export function LandingPageContent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [currentUser, setCurrentUser] = useState<any>(null)
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setCurrentUser(user)
+    })
+  }, [])
 
   return (
     <>
@@ -149,9 +158,9 @@ export function LandingPageContent() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Link href="/auth/signup">
+              <Link href={currentUser ? "/app" : "/auth/signup"}>
                 <Button size="lg" className="text-lg px-8 h-14 shadow-lg shadow-indigo-200/50 hover:shadow-xl hover:shadow-indigo-200/60">
-                  Try Free — 3 Proposals
+                  {currentUser ? 'Go to Dashboard' : 'Try Free — 3 Proposals'}
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -347,8 +356,8 @@ export function LandingPageContent() {
                   </li>
                 ))}
               </ul>
-              <Link href="/auth/signup">
-                <Button variant="outline" className="w-full">Get Started Free</Button>
+              <Link href={currentUser ? "/app" : "/auth/signup"}>
+                <Button variant="outline" className="w-full">{currentUser ? 'Go to Dashboard' : 'Get Started Free'}</Button>
               </Link>
             </div>
 
@@ -544,9 +553,9 @@ export function LandingPageContent() {
           <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
             Start sending better proposals in less time. Free forever plan — no credit card required.
           </p>
-          <Link href="/auth/signup">
+          <Link href={currentUser ? "/app" : "/auth/signup"}>
             <Button size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50 text-lg px-10 h-14 shadow-2xl">
-              Start Generating Proposals
+              {currentUser ? 'Go to Dashboard' : 'Start Generating Proposals'}
               <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

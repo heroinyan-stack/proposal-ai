@@ -10,6 +10,14 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "fiverr-gig-promotion",
+    title: "How to Promote Your Fiverr Gig: 12 Proven Strategies (2025)",
+    excerpt:
+      "Learn 12 proven strategies to promote your Fiverr gig and get more orders. From SEO optimization to social media marketing.",
+    readTime: "12 min",
+    category: "Fiverr Tips",
+  },
+  {
     slug: "upwork-job-invitation-response",
     title: "How to Respond to Upwork Job Invitations (Templates Included)",
     excerpt:

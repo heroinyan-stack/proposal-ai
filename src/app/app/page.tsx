@@ -37,6 +37,9 @@ export default function ProposalPage() {
   const [user, setUser] = useState<any>(null)
   const [credits, setCredits] = useState(3)
   const [error, setError] = useState('')
+  const [activeTab, setActiveTab] = useState<'generate' | 'history'>('generate')
+  const [history, setHistory] = useState<any[]>([])
+  const [loadingHistory, setLoadingHistory] = useState(false)
 
   // Result state
   const [versions, setVersions] = useState<Record<string, string>>({})
@@ -47,6 +50,27 @@ export default function ProposalPage() {
   const [pricingAdvice, setPricingAdvice] = useState<any>(null)
 
   const router = useRouter()
+
+  const loadHistory = async (userId: string) => {
+    setLoadingHistory(true)
+    try {
+      const supabase = createClient()
+      const { data, error } = await supabase
+        .from('proposals')
+        .select('*')
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false })
+        .limit(20)
+
+      if (!error && data) {
+        setHistory(data)
+      }
+    } catch (e) {
+      console.error('Failed to load history:', e)
+    } finally {
+      setLoadingHistory(false)
+    }
+  }
 
   useEffect(() => {
     const loadUser = async () => {
@@ -69,6 +93,8 @@ export default function ProposalPage() {
       if (profile) {
         setCredits(profile.credits_remaining || 0)
       }
+
+      loadHistory(user.id)
     }
     
     loadUser()
@@ -113,6 +139,10 @@ export default function ProposalPage() {
       setKeywordAnalysis(data.keywordAnalysis || null)
       setPricingAdvice(data.pricingAdvice || null)
       setCredits((prev) => prev - 1)
+      
+      if (user) {
+        loadHistory(user.id)
+      }
     } catch (err: any) {
       setError(err.message)
     } finally {
@@ -195,11 +225,110 @@ export default function ProposalPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-slate-900">Upwork Proposal Generator</h1>
-          <p className="text-slate-600 mt-1">Paste a job → Get 3 optimized versions + client analysis + pricing advice</p>
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900">Upwork Proposal Generator</h1>
+            <p className="text-slate-600 mt-1">Paste a job → Get 3 optimized versions + client analysis + pricing advice</p>
+          </div>
+          <div className="flex bg-slate-100 rounded-lg p-1">
+            <button
+              onClick={() => setActiveTab('generate')}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                activeTab === 'generate'
+                  ? 'bg-white text-indigo-600 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Generate
+            </button>
+            <button
+              onClick={() => setActiveTab('history')}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center gap-2 ${
+                activeTab === 'history'
+                  ? 'bg-white text-indigo-600 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              History
+              {history.length > 0 && (
+                <span className="bg-indigo-100 text-indigo-600 text-xs px-1.5 py-0.5 rounded-full">
+                  {history.length}
+                </span>
+              )}
+            </button>
+          </div>
         </div>
 
+        {activeTab === 'history' ? (
+          <Card>
+            <CardHeader>
+              <CardTitle>Recent Proposals</CardTitle>
+              <CardDescription>Your last 20 generated proposals</CardDescription>
+            </CardHeader>
+            <CardContent>
+              {loadingHistory ? (
+                <div className="flex items-center justify-center py-12">
+                  <div className="animate-spin w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full" />
+                </div>
+              ) : history.length === 0 ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <p className="text-slate-500 font-medium">No proposals yet</p>
+                  <p className="text-sm text-slate-400 mt-1">Generate your first proposal to see it here</p>
+                  <button
+                    onClick={() => setActiveTab('generate')}
+                    className="mt-4 text-sm text-indigo-600 font-medium hover:text-indigo-700"
+                  >
+                    Generate a proposal →
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {history.map((item: any) => (
+                    <div
+                      key={item.id}
+                      className="border border-slate-200 rounded-xl p-4 hover:border-indigo-300 hover:bg-indigo-50/30 transition-colors cursor-pointer group"
+                      onClick={() => {
+                        if (item.job_description) setJobDescription(item.job_description)
+                        setActiveTab('generate')
+                      }}
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-slate-900 line-clamp-2 group-hover:text-indigo-600">
+                            {item.job_description || 'No job description'}
+                          </p>
+                          <div className="flex items-center gap-3 mt-2 text-xs text-slate-500">
+                            <span>
+                              {new Date(item.created_at).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                              })}
+                            </span>
+                            {item.credits_used !== undefined && (
+                              <span>
+                                {item.credits_used === 0 ? 'Pro credit' : `${item.credits_used} credit${item.credits_used > 1 ? 's' : ''}`}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <svg className="w-5 h-5 text-slate-400 group-hover:text-indigo-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        ) : (
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Left: Input */}
           <div className="lg:col-span-2 space-y-4">
@@ -490,6 +619,7 @@ AWS, and PostgreSQL. Strong English communication.`}
             </Card>
           </div>
         </div>
+        )}
       </main>
     </div>
   )

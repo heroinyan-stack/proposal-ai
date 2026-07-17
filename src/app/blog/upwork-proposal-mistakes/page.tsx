@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 export const metadata = {
   title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
@@ -8,11 +9,14 @@ export const metadata = {
     "Learn the top 10 Upwork proposal mistakes that are costing you jobs. Avoid these common errors and increase your win rate by 30% or more.",
   keywords: [
     "upwork proposal mistakes",
+    "upwork mistakes to avoid",
+    "why upwork proposals fail",
+    "upwork proposal tips",
+    "how to win upwork jobs",
+    "upwork proposal errors",
     "upwork win rate",
-    "freelance proposal tips",
-    "upwork bidding errors",
-    "upwork job rejection",
-    "freelance success tips",
+    "freelance proposal mistakes",
+    "how to write upwork proposals",
   ],
 };
 
@@ -85,13 +89,9 @@ export default function BlogPost() {
             Here&apos;s what works:
           </p>
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 my-6">
-            <p className="text-slate-700 font-medium mb-2">Good opening:</p>
-            <p className="text-slate-600">
-              "Hi Sarah, I noticed you&apos;re looking to rebuild your WordPress site with 
-              a custom booking system — and that you specifically mentioned wanting 
-              integration with Square. I built a similar system last month for a yoga studio 
-              that now handles 150+ bookings per week automatically."
-            </p>
+            <p className="text-slate-600"><strong>Bad:</strong> I am an experienced WordPress developer...</p>
+            <p className="text-slate-600 mt-4"><strong>Good:</strong> Your job post mentioned needing a WooCommerce store
+            that handles 500+ daily orders — that&apos;s exactly what I built for a client last month...</p>
           </div>
           <p>
             <strong>Pro tip:</strong> If their job post mentions a specific tool, challenge, 
@@ -100,59 +100,47 @@ export default function BlogPost() {
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #2: Focusing on Your Skills Instead of Their Results
+            Mistake #2: Writing Generic Proposals
           </h2>
           <p>
-            <strong>The problem:</strong> Most proposals read like a resume. "I have 5 years 
-            of experience in web design. I know HTML, CSS, JavaScript, and WordPress." 
-            Who cares?
+            <strong>The mistake:</strong> Using the same copy-paste proposal for every job,
+            with only the client name changed.
           </p>
           <p>
-            <strong>Why it fails:</strong> Clients don&apos;t hire skills — they hire 
-            solutions to their problems. They want to know what you can do <em>for them</em>, 
-            not what you can do in general.
+            <strong>Why it fails:</strong> Clients can smell templates from a mile away.
+            In a 2024 Upwork survey, 78% of clients said they reject proposals that feel "generic" or "template-like."
+            Top freelancers report spending 10-15 minutes customizing each proposal — and it pays off.
           </p>
           <p>
-            <strong>The fix:</strong> Lead with results, not skills. Instead of listing 
-            your qualifications, tell them what outcome you&apos;ll deliver.
+            <strong>What to do instead:</strong> Reference at least 2 specific details from their job post:
           </p>
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 my-6">
-            <p className="text-slate-700 font-medium mb-2">Bad vs. Good:</p>
-            <p className="text-slate-600 mb-4"><strong>Bad:</strong> "I&apos;m a skilled SEO specialist with 7 years of experience."</p>
-            <p className="text-slate-600"><strong>Good:</strong> "I helped a similar e-commerce store increase organic traffic by 
-              210% in 6 months — and that translated to $47k in new monthly revenue."</p>
-          </div>
-          <p>
-            <strong>Real case:</strong> One freelancer I work with changed his proposals from 
-            skill-focused to results-focused and saw his win rate jump from 12% to 38% in 
-            2 months.
-          </p>
+          <ul>
+            <li>Mention their target audience ("I noticed you&apos;re targeting small business owners in the wellness space")</li>
+            <li>Reference their tech stack ("React with Next.js is my stack of choice too")</li>
+            <li>Ask about their deadline or timeline constraints</li>
+            <li>Comment on something unique about their business or project</li>
+          </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #3: Writing a Novel (Proposals Should Be Short)
+            Mistake #3: Focusing on Features Instead of Outcomes
           </h2>
           <p>
-            <strong>The problem:</strong> I see proposals that are 500+ words long. Clients 
-            don&apos;t have time to read that. They&apos;re busy sifting through dozens of bids.
+            <strong>The mistake:</strong> Listing what you&apos;ll do ("I will write 10 blog posts")
+            instead of what they&apos;ll get ("I&apos;ll create content that ranks on page 1 of Google").
           </p>
           <p>
-            <strong>Why it fails:</strong> According to a study by Upwork, proposals under 
-            200 words have a 3x higher response rate than longer proposals. Clients skim, 
-            they don&apos;t read.
+            <strong>Why it fails:</strong> Clients aren&apos;t buying your time or tasks —
+            they&apos;re buying results. A client hiring for content writing doesn&apos;t want 10 blog posts.
+            They want more traffic, leads, and sales.
           </p>
           <p>
-            <strong>The fix:</strong> Keep your proposal to <strong>100-150 words</strong>. 
-            Focus on three things:
+            <strong>What to do instead:</strong> Frame everything in terms of outcomes:
           </p>
-          <ol>
-            <li>A quick personalization showing you read the job</li>
-            <li>One relevant result or example</li>
-            <li>A clear call to action (question)</li>
-          </ol>
-          <p>
-            <strong>Rule of thumb:</strong> If it takes more than 30 seconds to read, 
-            it&apos;s too long.
-          </p>
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 my-6">
+            <p className="text-slate-600"><strong>Feature-focused:</strong> I will design 5 social media posts per week.</p>
+            <p className="text-slate-600 mt-4"><strong>Outcome-focused:</strong> I&apos;ll create social content that drove
+            2x more engagement for my last client, helping them grow their email list by 300 subscribers in 3 months.</p>
+          </div>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
             Mistake #4: Not Including Relevant Work Samples
@@ -233,32 +221,26 @@ export default function BlogPost() {
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #7: Not Customizing for the Client
+            Mistake #7: Writing Too Much (Proposals Should Be Concise)
           </h2>
           <p>
-            <strong>The problem:</strong> Copy-paste proposals. "I can help with your project. 
-            I have experience in [generic skill]. Let me know if you need more info."
+            <strong>The mistake:</strong> Writing 500+ word proposals that read like a resume.
+            Clients don&apos;t have time to read novels — they have jobs to fill.
           </p>
           <p>
-            <strong>Why it fails:</strong> Clients can spot a template a mile away. 
-            If your proposal could apply to any job posting, it will get ignored.
+            <strong>Why it fails:</strong> Upwork data shows proposals under 200 words have a 
+            3x higher response rate than longer ones. Clients spend an average of 15 seconds 
+            scanning each proposal before deciding whether to read more.
           </p>
           <p>
-            <strong>The fix:</strong> Customize <em>every</em> proposal. At minimum:
+            <strong>What to do instead:</strong> Keep your proposal to <strong>100-150 words</strong>.
+            Focus on:
           </p>
           <ol>
-            <li>Use their name (not "Hi there")</li>
-            <li>Mention 1-2 specifics from their job post</li>
-            <li>Tailor your sample links to their industry</li>
+            <li>A quick personalization showing you read the job</li>
+            <li>One relevant result or example</li>
+            <li>A clear call to action (question)</li>
           </ol>
-          <p>
-            <strong>Time saver:</strong> Create a template with placeholders, but always 
-            fill in the client-specific details. Tools like{" "}
-            <Link href="/" className="text-indigo-600 font-medium hover:underline">
-              ProposalAI
-            </Link>{" "}
-            can help you generate personalized proposals in seconds.
-          </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
             Mistake #8: Not Addressing Their Pain Points

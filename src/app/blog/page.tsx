@@ -13,9 +13,9 @@ const posts = [
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:
-      "Learn the top 10 Upwork proposal mistakes that are costing you jobs. Avoid these common errors and increase your win rate by 30% or more.",
-    readTime: "12 min",
-    category: "Mistakes",
+      "Avoid the 10 most common proposal mistakes that cost you jobs. Learn why your proposals get ignored and exactly how to fix each one.",
+    readTime: "10 min",
+    category: "Strategy",
   },
   {
     slug: "fiverr-gig-promotion",

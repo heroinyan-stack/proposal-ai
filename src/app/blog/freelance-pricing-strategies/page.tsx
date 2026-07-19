@@ -1,21 +1,45 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-export const metadata = {
-  title: "Freelance Pricing Strategies: How to Charge What You're Worth",
-  description:
-    "Master freelance pricing in 2025. Compare hourly, fixed-price, and value-based rates, calculate your minimum rate, and learn how to quote prices in proposals that clients accept.",
-  keywords: [
-    "freelance pricing",
-    "freelance rates",
-    "how to price freelance work",
-    "freelance rate calculator",
-    "value based pricing",
-    "upwork pricing strategy",
-  ],
-};
+const slug = "freelance-pricing-strategies";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+    description:
+      "Master freelance pricing in 2025. Compare hourly, fixed-price, and value-based rates, calculate your minimum rate, and learn how to quote prices in proposals that clients accept.",
+    keywords: [
+      "freelance pricing",
+      "freelance rates",
+      "how to price freelance work",
+      "freelance rate calculator",
+      "value based pricing",
+      "upwork pricing strategy",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+      description:
+        "Master freelance pricing in 2025. Compare hourly, fixed-price, and value-based rates, calculate your minimum rate, and learn how to quote prices in proposals that clients accept.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+      description:
+        "Master freelance pricing in 2025. Compare hourly, fixed-price, and value-based rates, calculate your minimum rate, and learn how to quote prices in proposals that clients accept.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -471,63 +495,53 @@ export default function BlogPost() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://proposalai.com/"
+                "item": "https://proposalai.top/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Blog",
-                "item": "https://proposalai.com/blog"
+                "item": "https://proposalai.top/blog"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Freelance Pricing Strategies: How to Charge What You're Worth",
-                "item": "https://proposalai.com/blog/freelance-pricing-strategies"
+                "item": "https://proposalai.top/blog/freelance-pricing-strategies"
               }
             ]
           })
         }}
       />
       <Script
-        id="article-jsonld"
+        id="article-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Freelance Pricing Strategies: How to Charge What You're Worth",
-            "description": "Master freelance pricing in 2025. Compare hourly, fixed-price, and value-based rates, calculate your minimum rate, and learn how to quote prices in proposals that clients accept.",
-            "image": "https://proposalai.com/og-image.png",
-            "datePublished": "2025-07-02",
-            "dateModified": "2025-07-02",
-            "author": {
+            headline: "Freelance Pricing Strategies: How to Charge What You're Worth",
+            description:
+              "Master freelance pricing in 2025. Compare hourly, fixed-price, and value-based rates, calculate your minimum rate, and learn how to quote prices in proposals that clients accept.",
+            author: {
               "@type": "Organization",
-              "name": "ProposalAI"
+              name: "ProposalAI",
             },
-            "publisher": {
+            publisher: {
               "@type": "Organization",
-              "name": "ProposalAI",
-              "logo": {
+              name: "ProposalAI",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://proposalai.com/logo.png"
-              }
+                url: "https://proposalai.top/icon.svg",
+              },
             },
-            "mainEntityOfPage": {
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.com/blog/freelance-pricing-strategies"
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            "keywords": [
-              "freelance pricing",
-              "freelance rates",
-              "how to price freelance work",
-              "freelance rate calculator",
-              "value based pricing",
-              "upwork pricing strategy"
-            ],
-            "articleSection": "Guides"
-          })
+          }),
         }}
       />
       <Footer />

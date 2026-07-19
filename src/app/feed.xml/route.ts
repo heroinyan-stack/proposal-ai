@@ -44,6 +44,30 @@ const posts = [
     category: "Strategy",
   },
   {
+    slug: "fiverr-gig-promotion",
+    title: "How to Promote Your Fiverr Gig: 12 Proven Strategies (2025)",
+    description:
+      "Learn 12 proven strategies to promote your Fiverr gig and get more orders. From SEO optimization to social media marketing.",
+    pubDate: "2025-07-02",
+    category: "Fiverr Tips",
+  },
+  {
+    slug: "upwork-job-invitation-response",
+    title: "How to Respond to Upwork Job Invitations (Templates Included)",
+    description:
+      "Learn how to respond to Upwork job invitations like a pro. Includes 5 copy-paste templates for accepting, negotiating, and declining invitations.",
+    pubDate: "2025-07-02",
+    category: "Templates",
+  },
+  {
+    slug: "upwork-connects-tips",
+    title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+    description:
+      "Master Upwork Connects: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects.",
+    pubDate: "2025-07-02",
+    category: "Guides",
+  },
+  {
     slug: "upwork-proposal-templates",
     title: "5 Upwork Proposal Templates That Actually Win Jobs (2025)",
     description:

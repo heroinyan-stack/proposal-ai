@@ -1,11 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog - Upwork Proposal Tips & Freelance Guides",
   description:
     "Learn how to win more Upwork contracts, write better proposals, and grow your freelance business. Expert tips, templates, and strategies for freelancers.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "Blog - Upwork Proposal Tips & Freelance Guides",
+    description:
+      "Learn how to win more Upwork contracts, write better proposals, and grow your freelance business. Expert tips, templates, and strategies for freelancers.",
+    type: "website",
+    url: "https://proposalai.top/blog",
+    siteName: "ProposalAI",
+  },
 };
 
 const posts = [

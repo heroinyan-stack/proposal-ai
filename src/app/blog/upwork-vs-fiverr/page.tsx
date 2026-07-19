@@ -1,20 +1,44 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-export const metadata = {
-  title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
-  description:
-    "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
-  keywords: [
-    "upwork vs fiverr",
-    "fiverr vs upwork",
-    "best freelance platform 2025",
-    "upwork or fiverr",
-    "freelance platforms compared",
-  ],
-};
+const slug = "upwork-vs-fiverr";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+    description:
+      "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
+    keywords: [
+      "upwork vs fiverr",
+      "fiverr vs upwork",
+      "best freelance platform 2025",
+      "upwork or fiverr",
+      "freelance platforms compared",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+      description:
+        "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+      description:
+        "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -452,62 +476,53 @@ export default function BlogPost() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://proposalai.com/"
+                "item": "https://proposalai.top/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Blog",
-                "item": "https://proposalai.com/blog"
+                "item": "https://proposalai.top/blog"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
-                "item": "https://proposalai.com/blog/upwork-vs-fiverr"
+                "item": "https://proposalai.top/blog/upwork-vs-fiverr"
               }
             ]
           })
         }}
       />
       <Script
-        id="article-jsonld"
+        id="article-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
-            "description": "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
-            "image": "https://proposalai.com/og-image.png",
-            "datePublished": "2025-07-02",
-            "dateModified": "2025-07-02",
-            "author": {
+            headline: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+            description:
+              "A detailed 2025 comparison of Upwork and Fiverr — fees, client quality, competition, payment methods, and who should use which platform. Find out where you'll earn more as a freelancer.",
+            author: {
               "@type": "Organization",
-              "name": "ProposalAI"
+              name: "ProposalAI",
             },
-            "publisher": {
+            publisher: {
               "@type": "Organization",
-              "name": "ProposalAI",
-              "logo": {
+              name: "ProposalAI",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://proposalai.com/logo.png"
-              }
+                url: "https://proposalai.top/icon.svg",
+              },
             },
-            "mainEntityOfPage": {
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.com/blog/upwork-vs-fiverr"
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            "keywords": [
-              "upwork vs fiverr",
-              "fiverr vs upwork",
-              "best freelance platform 2025",
-              "upwork or fiverr",
-              "freelance platforms compared"
-            ],
-            "articleSection": "Guides"
-          })
+          }),
         }}
       />
       <Footer />

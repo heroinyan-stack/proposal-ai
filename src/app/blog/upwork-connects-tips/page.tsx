@@ -1,23 +1,47 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-export const metadata = {
-  title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
-  description:
-    "Master Upwork Connects in 2025: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects on low-quality jobs.",
-  keywords: [
-    "upwork connects",
-    "upwork connects guide",
-    "how to use upwork connects",
-    "upwork connects strategy",
-    "upwork connects cost",
-    "upwork free connects",
-    "upwork proposal tips",
-    "upwork bidding strategy",
-  ],
-};
+const slug = "upwork-connects-tips";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+    description:
+      "Master Upwork Connects in 2025: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects on low-quality jobs.",
+    keywords: [
+      "upwork connects",
+      "upwork connects guide",
+      "how to use upwork connects",
+      "upwork connects strategy",
+      "upwork connects cost",
+      "upwork free connects",
+      "upwork proposal tips",
+      "upwork bidding strategy",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+      description:
+        "Master Upwork Connects in 2025: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects on low-quality jobs.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+      description:
+        "Master Upwork Connects in 2025: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects on low-quality jobs.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -457,7 +481,7 @@ export default function BlogPost() {
         }}
       />
       <Script
-        id="article-jsonld"
+        id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -465,38 +489,25 @@ export default function BlogPost() {
             "@type": "Article",
             headline: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
             description:
-              "Master Upwork Connects in 2025: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI.",
-            image: [
-              "https://proposalai.top/og-image.png",
-            ],
-            datePublished: "2025-07-08",
-            dateModified: "2025-07-08",
+              "Master Upwork Connects in 2025: how many you get, when to spend them, which jobs to bid on, and strategies to maximize your ROI. Stop wasting connects on low-quality jobs.",
             author: {
               "@type": "Organization",
               name: "ProposalAI",
-              url: "https://proposalai.top",
             },
             publisher: {
               "@type": "Organization",
               name: "ProposalAI",
               logo: {
                 "@type": "ImageObject",
-                url: "https://proposalai.top/logo.png",
+                url: "https://proposalai.top/icon.svg",
               },
             },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.top/blog/upwork-connects-tips",
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            keywords: [
-              "upwork connects",
-              "upwork connects guide",
-              "how to use upwork connects",
-              "upwork connects strategy",
-              "upwork bidding strategy",
-              "upwork free connects",
-            ],
-            articleSection: "Guides",
           }),
         }}
       />

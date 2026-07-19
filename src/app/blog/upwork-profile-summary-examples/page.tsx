@@ -1,20 +1,44 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-export const metadata = {
-  title: "How to Write an Upwork Profile Summary That Gets Clients",
-  description:
-    "Learn how to write an Upwork profile summary that converts visitors into clients. 5 copy-paste profile examples for developers, designers, writers, marketers, and VAs, plus SEO and rate tips.",
-  keywords: [
-    "upwork profile summary",
-    "upwork profile examples",
-    "upwork profile tips",
-    "upwork profile description",
-    "how to write upwork profile",
-  ],
-};
+const slug = "upwork-profile-summary-examples";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "How to Write an Upwork Profile Summary That Gets Clients",
+    description:
+      "Learn how to write an Upwork profile summary that converts visitors into clients. 5 copy-paste profile examples for developers, designers, writers, marketers, and VAs, plus SEO and rate tips.",
+    keywords: [
+      "upwork profile summary",
+      "upwork profile examples",
+      "upwork profile tips",
+      "upwork profile description",
+      "how to write upwork profile",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "How to Write an Upwork Profile Summary That Gets Clients",
+      description:
+        "Learn how to write an Upwork profile summary that converts visitors into clients. 5 copy-paste profile examples for developers, designers, writers, marketers, and VAs, plus SEO and rate tips.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "How to Write an Upwork Profile Summary That Gets Clients",
+      description:
+        "Learn how to write an Upwork profile summary that converts visitors into clients. 5 copy-paste profile examples for developers, designers, writers, marketers, and VAs, plus SEO and rate tips.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -442,26 +466,26 @@ export default function BlogPost() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://proposalai.com",
+                item: "https://proposalai.top",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Blog",
-                item: "https://proposalai.com/blog",
+                item: "https://proposalai.top/blog",
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: "How to Write an Upwork Profile Summary That Gets Clients",
-                item: "https://proposalai.com/blog/upwork-profile-summary-examples",
+                item: "https://proposalai.top/blog/upwork-profile-summary-examples",
               },
             ],
           }),
         }}
       />
       <Script
-        id="article-jsonld"
+        id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -470,36 +494,24 @@ export default function BlogPost() {
             headline: "How to Write an Upwork Profile Summary That Gets Clients",
             description:
               "Learn how to write an Upwork profile summary that converts visitors into clients. 5 copy-paste profile examples for developers, designers, writers, marketers, and VAs, plus SEO and rate tips.",
-            image: [
-              "https://proposalai.com/og-image.png",
-            ],
-            datePublished: "2025-07-02",
-            dateModified: "2025-07-02",
             author: {
               "@type": "Organization",
               name: "ProposalAI",
-              url: "https://proposalai.com",
             },
             publisher: {
               "@type": "Organization",
               name: "ProposalAI",
               logo: {
                 "@type": "ImageObject",
-                url: "https://proposalai.com/logo.png",
+                url: "https://proposalai.top/icon.svg",
               },
             },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.com/blog/upwork-profile-summary-examples",
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            keywords: [
-              "upwork profile summary",
-              "upwork profile examples",
-              "upwork profile tips",
-              "upwork profile description",
-              "how to write upwork profile",
-            ],
-            articleSection: "Guides",
           }),
         }}
       />

@@ -1,20 +1,46 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-export const metadata = {
-  title: "How to Get Your First Job on Upwork (10 Steps for Newbies)",
-  description:
-    "Complete step-by-step guide for getting your first Upwork job with no experience. Learn profile optimization, proposal strategy, and how to stand out as a new freelancer.",
-  keywords: [
-    "how to get first job on upwork",
-    "upwork for beginners",
-    "first upwork job no experience",
-    "get started on upwork",
-    "upwork tips for new freelancers",
-  ],
-};
+const slug = "how-to-get-first-job-on-upwork";
+
+const title = "How to Get Your First Job on Upwork (10 Steps for Newbies)";
+const description =
+  "Complete step-by-step guide for getting your first Upwork job with no experience. Learn profile optimization, proposal strategy, and how to stand out as a new freelancer.";
+const keywords = [
+  "how to get first job on upwork",
+  "upwork for beginners",
+  "first upwork job no experience",
+  "get started on upwork",
+  "upwork tips for new freelancers",
+];
+
+export function generateMetadata(): Metadata {
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -48,7 +74,7 @@ export default function BlogPost() {
           </li>
           <li>/</li>
           <li className="text-slate-900 font-medium truncate">
-            {metadata.title}
+            {title}
           </li>
         </ol>
       </nav>
@@ -370,19 +396,19 @@ export default function BlogPost() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://proposalai.com/",
+                item: "https://proposalai.top/",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Blog",
-                item: "https://proposalai.com/blog",
+                item: "https://proposalai.top/blog",
               },
               {
                 "@type": "ListItem",
                 position: 3,
-                name: metadata.title,
-                item: "https://proposalai.com/blog/how-to-get-first-job-on-upwork",
+                name: title,
+                item: `https://proposalai.top/blog/${slug}`,
               },
             ],
           }),
@@ -395,29 +421,26 @@ export default function BlogPost() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: metadata.title,
-            description: metadata.description,
-            image: "https://proposalai.com/og-image.png",
-            datePublished: "2025-06-30",
-            dateModified: "2025-06-30",
+            headline: title,
+            description: description,
             author: {
               "@type": "Organization",
-              name: "ProposalAI Team",
+              name: "ProposalAI",
             },
             publisher: {
               "@type": "Organization",
               name: "ProposalAI",
               logo: {
                 "@type": "ImageObject",
-                url: "https://proposalai.com/logo.png",
+                url: "https://proposalai.top/icon.svg",
               },
             },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.com/blog/how-to-get-first-job-on-upwork",
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            keywords: metadata.keywords.join(", "),
-            articleSection: "Guides",
           }),
         }}
       />

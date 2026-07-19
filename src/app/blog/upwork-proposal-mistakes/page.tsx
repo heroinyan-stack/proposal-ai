@@ -1,21 +1,46 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 
-export const metadata = {
-  title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
-  description:
-    "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
-  keywords: [
-    "upwork proposal mistakes",
-    "upwork proposal tips",
-    "common upwork mistakes",
-    "upwork win rate",
-    "upwork proposal errors",
-    "how to win upwork jobs",
-    "freelance proposal tips",
-  ],
-};
+const slug = "upwork-proposal-mistakes";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+    description:
+      "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+    keywords: [
+      "upwork proposal mistakes",
+      "upwork proposal tips",
+      "common upwork mistakes",
+      "upwork win rate",
+      "upwork proposal errors",
+      "how to win upwork jobs",
+      "freelance proposal tips",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+      description:
+        "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+      description:
+        "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -394,6 +419,37 @@ export default function BlogPost() {
         </div>
       </article>
 
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+            description:
+              "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+            author: {
+              "@type": "Organization",
+              name: "ProposalAI",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proposalai.top/icon.svg",
+              },
+            },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://proposalai.top/blog/${slug}`,
+            },
+          }),
+        }}
+      />
       <Footer />
     </div>
   );

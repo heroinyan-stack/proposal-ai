@@ -1,20 +1,44 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-export const metadata = {
-  title: "7 Fiverr Gig Description Examples That Convert (2025)",
-  description:
-    "Copy-paste these proven Fiverr gig description examples for logo design, WordPress, SEO, video editing, writing, voice over, and social media. Learn what makes buyers click Order Now.",
-  keywords: [
-    "fiverr gig description",
-    "fiverr gig template",
-    "how to write fiverr gig description",
-    "fiverr gig description examples",
-    "best fiverr gigs",
-  ],
-};
+const slug = "fiverr-gig-description-examples";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "7 Fiverr Gig Description Examples That Convert (2025)",
+    description:
+      "Copy-paste these proven Fiverr gig description examples for logo design, WordPress, SEO, video editing, writing, voice over, and social media. Learn what makes buyers click Order Now.",
+    keywords: [
+      "fiverr gig description",
+      "fiverr gig template",
+      "how to write fiverr gig description",
+      "fiverr gig description examples",
+      "best fiverr gigs",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "7 Fiverr Gig Description Examples That Convert (2025)",
+      description:
+        "Copy-paste these proven Fiverr gig description examples for logo design, WordPress, SEO, video editing, writing, voice over, and social media. Learn what makes buyers click Order Now.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "7 Fiverr Gig Description Examples That Convert (2025)",
+      description:
+        "Copy-paste these proven Fiverr gig description examples for logo design, WordPress, SEO, video editing, writing, voice over, and social media. Learn what makes buyers click Order Now.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -516,26 +540,26 @@ export default function BlogPost() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://proposalai.com",
+                item: "https://proposalai.top",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Blog",
-                item: "https://proposalai.com/blog",
+                item: "https://proposalai.top/blog",
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: "7 Fiverr Gig Description Examples That Convert (2025)",
-                item: "https://proposalai.com/blog/fiverr-gig-description-examples",
+                item: "https://proposalai.top/blog/fiverr-gig-description-examples",
               },
             ],
           }),
         }}
       />
       <Script
-        id="article-jsonld"
+        id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -544,36 +568,24 @@ export default function BlogPost() {
             headline: "7 Fiverr Gig Description Examples That Convert (2025)",
             description:
               "Copy-paste these proven Fiverr gig description examples for logo design, WordPress, SEO, video editing, writing, voice over, and social media. Learn what makes buyers click Order Now.",
-            image: [
-              "https://proposalai.com/og-image.png",
-            ],
-            datePublished: "2025-07-02",
-            dateModified: "2025-07-02",
             author: {
               "@type": "Organization",
               name: "ProposalAI",
-              url: "https://proposalai.com",
             },
             publisher: {
               "@type": "Organization",
               name: "ProposalAI",
               logo: {
                 "@type": "ImageObject",
-                url: "https://proposalai.com/logo.png",
+                url: "https://proposalai.top/icon.svg",
               },
             },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.com/blog/fiverr-gig-description-examples",
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            keywords: [
-              "fiverr gig description",
-              "fiverr gig template",
-              "how to write fiverr gig description",
-              "fiverr gig description examples",
-              "best fiverr gigs",
-            ],
-            articleSection: "Templates",
           }),
         }}
       />

@@ -1,22 +1,46 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
-import Script from "next/script";
 
-export const metadata = {
-  title: "How to Respond to Upwork Job Invitations (Templates Included)",
-  description:
-    "Learn how to respond to Upwork job invitations like a pro. Includes 5 copy-paste templates for accepting, negotiating, and declining invitations professionally.",
-  keywords: [
-    "upwork job invitation",
-    "upwork invitation response",
-    "how to accept upwork invitation",
-    "upwork invitation templates",
-    "respond to upwork client",
-    "upwork direct offer",
-    "upwork interview invitation",
-  ],
-};
+const slug = "upwork-job-invitation-response";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "How to Respond to Upwork Job Invitations (Templates Included)",
+    description:
+      "Learn how to respond to Upwork job invitations like a pro. Includes 5 copy-paste templates for accepting, negotiating, and declining invitations professionally.",
+    keywords: [
+      "upwork job invitation",
+      "upwork invitation response",
+      "how to accept upwork invitation",
+      "upwork invitation templates",
+      "respond to upwork client",
+      "upwork direct offer",
+      "upwork interview invitation",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "How to Respond to Upwork Job Invitations (Templates Included)",
+      description:
+        "Learn how to respond to Upwork job invitations like a pro. Includes 5 copy-paste templates for accepting, negotiating, and declining invitations professionally.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "How to Respond to Upwork Job Invitations (Templates Included)",
+      description:
+        "Learn how to respond to Upwork job invitations like a pro. Includes 5 copy-paste templates for accepting, negotiating, and declining invitations professionally.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -473,7 +497,7 @@ export default function BlogPost() {
         }}
       />
       <Script
-        id="article-jsonld"
+        id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -482,36 +506,24 @@ export default function BlogPost() {
             headline: "How to Respond to Upwork Job Invitations (Templates Included)",
             description:
               "Learn how to respond to Upwork job invitations like a pro. Includes 5 copy-paste templates for accepting, negotiating, and declining invitations professionally.",
-            image: [
-              "https://proposalai.top/og-image.png",
-            ],
-            datePublished: "2025-07-13",
-            dateModified: "2025-07-13",
             author: {
               "@type": "Organization",
               name: "ProposalAI",
-              url: "https://proposalai.top",
             },
             publisher: {
               "@type": "Organization",
               name: "ProposalAI",
               logo: {
                 "@type": "ImageObject",
-                url: "https://proposalai.top/logo.png",
+                url: "https://proposalai.top/icon.svg",
               },
             },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://proposalai.top/blog/upwork-job-invitation-response",
+              "@id": `https://proposalai.top/blog/${slug}`,
             },
-            keywords: [
-              "upwork job invitation",
-              "upwork invitation response",
-              "how to accept upwork invitation",
-              "upwork invitation templates",
-              "respond to upwork client",
-            ],
-            articleSection: "Templates",
           }),
         }}
       />

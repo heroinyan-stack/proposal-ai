@@ -21,9 +21,19 @@ export default function AboutPage() {
               </div>
               <span className="text-xl font-bold text-slate-900">ProposalAI</span>
             </Link>
+            
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Pricing</Link>
+              <Link href="/blog" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Blog</Link>
+              <Link href="/about" className="text-indigo-600 font-medium text-sm">About</Link>
+            </div>
+            
             <div className="flex items-center gap-3">
-              <Link href="/">
-                <Button variant="ghost" size="sm">Back</Button>
+              <Link href="/auth/login">
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button size="sm">Get Started</Button>
               </Link>
             </div>
           </div>
@@ -46,6 +56,22 @@ export default function AboutPage() {
             ProposalAI optimizes your proposals for Upwork&apos;s ranking algorithm and client psychology, 
             helping you stand out from the crowd without spending hours writing cover letters.
           </p>
+
+          <div className="bg-slate-50 rounded-xl p-8 mb-10">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">AI Technology Disclosure</h2>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              ProposalAI uses <strong>Anthropic Claude</strong> (specifically the Claude Sonnet model) 
+              as the underlying AI technology to generate proposal content. When you submit a job 
+              description, our system analyzes it and sends a structured prompt to Claude&apos;s API, 
+              which generates three optimized proposal variations tailored to the specific job.
+            </p>
+            <p className="text-slate-700 leading-relaxed">
+              The AI output is generated based on your input and our proprietary prompt engineering. 
+              While we strive for quality and accuracy, proposals are AI-generated and should be 
+              reviewed and customized before sending. ProposalAI does not guarantee job placement 
+              or specific response rates.
+            </p>
+          </div>
 
           <div className="pt-8 border-t border-slate-200">
             <Link href="/">

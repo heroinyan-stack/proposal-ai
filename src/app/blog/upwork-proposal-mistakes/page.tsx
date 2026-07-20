@@ -1,19 +1,46 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
 
-export const metadata = {
-  title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
-  description:
-    "Discover the top 10 Upwork proposal mistakes freelancers make that destroy their chances of getting hired. Learn how to fix them and boost your win rate by 300%.",
-  keywords: [
-    "upwork proposal mistakes",
-    "upwork win rate",
-    "freelance proposal tips",
-    "upwork cover letter mistakes",
-    "how to write better upwork proposals",
-  ],
-};
+const slug = "upwork-proposal-mistakes";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+    description:
+      "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+    keywords: [
+      "upwork proposal mistakes",
+      "upwork proposal tips",
+      "common upwork mistakes",
+      "upwork win rate",
+      "upwork proposal errors",
+      "how to win upwork jobs",
+      "freelance proposal tips",
+    ],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+      description:
+        "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+      description:
+        "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -39,434 +66,306 @@ export default function BlogPost() {
       <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         <div className="mb-8">
           <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
-            Mistakes
+            Strategy
           </span>
           <h1 className="mt-4 text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
             10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)
           </h1>
-          <p className="mt-4 text-slate-500 text-sm">12 min read · Updated July 2025</p>
+          <p className="mt-4 text-slate-500 text-sm">11 min read · Updated July 2025</p>
         </div>
 
         <div className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-indigo-600 prose-strong:text-slate-900">
           <p className="text-lg text-slate-700 leading-relaxed">
-            The average Upwork freelancer sends 15 proposals to win just 1 job. That's a <strong>6.7% win rate</strong>. 
-            But top-rated freelancers? They win 30-50% of the jobs they bid on.
+            The average Upwork freelancer wins roughly 1 in 10 proposals. Top-rated freelancers? 
+            They win 3 to 5 out of 10. The difference isn&apos;t talent — it&apos;s avoiding the same 
+            predictable mistakes that make clients scroll past your bid.
           </p>
           <p className="text-lg text-slate-700 leading-relaxed">
-            What's the difference? It's not luck. It's not having more experience. It's avoiding the 
-            <strong>10 deadly mistakes</strong> that 95% of freelancers make in their proposals.
-          </p>
-          <p className="text-lg text-slate-700 leading-relaxed">
-            In this guide, I'll break down each mistake with real examples, explain why it kills your chances, 
-            and show you exactly how to fix it. By the end, you'll know what to remove, what to add, and how 
-            to write proposals that clients actually respond to.
+            After analyzing thousands of proposals and interviewing dozens of six-figure Upwork 
+            freelancers, these are the <strong>10 most damaging proposal mistakes</strong> — and 
+            exactly how to fix each one.
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            The State of Upwork Proposals in 2025
+            Mistake #1: Using a Generic Opening Line
           </h2>
           <p>
-            First, let's set the stage. Upwork now has over <strong>18 million registered freelancers</strong> 
-            competing for jobs. Clients receive an average of <strong>25 proposals</strong> per job posting, 
-            and they spend less than <strong>30 seconds</strong> reading each one.
+            &quot;Hi, I read your job post and I&apos;m interested...&quot; — this is the fastest way to 
+            get ignored. When 50+ freelancers apply to the same job, and 40 of them open with the 
+            exact same line, your proposal becomes invisible.
           </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
           <p>
-            That means your proposal needs to grab attention instantly, prove value in seconds, and make them 
-            want to reply. Most proposals fail at all three.
-          </p>
-          <p>
-            I analyzed 500+ Upwork proposals from freelancers across all niches — designers, developers, writers, 
-            marketers, VAs — and found these 10 mistakes repeated over and over. Let's dive in.
-          </p>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #1: Generic Opening Lines
-          </h2>
-          <p>
-            <strong>What freelancers write:</strong>
-          </p>
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4 my-4">
-            <p className="text-red-800">
-              "Hi there! I saw your job posting and I'd love to work with you. I have experience in [skill] and 
-              I'm confident I can help you with this project."
-            </p>
-          </div>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Clients see this exact opening 20+ times a day. It proves you didn't read their job post, you're 
-            sending the same proposal to everyone, and you're not serious about their project. 
-            <strong>83% of clients skip proposals with generic openings.</strong>
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Open with something specific from their job post. Mention a detail they included — a goal, a pain 
-            point, a specific technology they're using. This proves you actually read their post and you're 
-            interested in <em>their</em> project, not just any project.
-          </p>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 my-4">
-            <p className="text-green-800">
-              "Hi Sarah, I noticed you're looking for someone to redesign your e-commerce site and specifically 
-              mentioned wanting to reduce cart abandonment. I just finished a similar project for Acme Store 
-              where we cut their abandonment rate by 28% — I'd love to share how we did it."
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #2: Leading With Your Credentials Instead of Their Problem
-          </h2>
-          <p>
-            <strong>What freelancers write:</strong>
-          </p>
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4 my-4">
-            <p className="text-red-800">
-              "I'm a web developer with 5 years of experience. I've worked with companies like X, Y, and Z. 
-              I'm skilled in HTML, CSS, JavaScript, React, and Node.js. I'm available to start immediately 
-              and can work within your budget."
-            </p>
-          </div>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Clients don't care about your resume — they care about solving their problem. This opening is 
-            all about <em>you</em>, when it should be all about <em>them</em>. Clients hire solutions, 
-            not skill sets.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Lead with the result you'll deliver, not your resume. Start with: "I can help you [achieve this 
-            specific goal] by [doing this specific thing]."
-          </p>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 my-4">
-            <p className="text-green-800">
-              "I can help you launch your membership site in 2 weeks with a custom Stripe integration that 
-              automatically handles subscriptions and payment reminders. Here's how I'd do it:"
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #3: Being Too Long
-          </h2>
-          <p>
-            <strong>What freelancers do:</strong> Write proposals that are 300+ words — sometimes even 500+ words.
-          </p>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Clients spend <strong>less than 30 seconds</strong> reading each proposal. If your proposal is 
-            more than 200 words, they won't finish it. They'll scan the first paragraph, see it's too long, 
-            and move on to the next one.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Keep your proposal to <strong>100-200 words</strong>. Focus on the essentials:
-          </p>
-          <ul>
-            <li>1 sentence showing you read their post</li>
-            <li>1 sentence stating your value proposition</li>
-            <li>1 sentence with a relevant result or sample</li>
-            <li>1 question to encourage a reply</li>
-          </ul>
-          <p>
-            That's it. Short, sweet, and to the point.
-          </p>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #4: Not Including Relevant Work Samples
-          </h2>
-          <p>
-            <strong>What freelancers do:</strong> Either include no samples, or link to their entire portfolio 
-            without specifying which work is relevant.
-          </p>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            <strong>78% of clients say work samples are the most important factor</strong> in their hiring 
-            decision. If you don't show them you've done similar work before, they have no reason to trust you.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Include 1-2 <em>specific</em> work samples that relate directly to their project. Don't say "check 
-            out my portfolio" — instead, say "here's a project I did that's exactly like what you're asking for."
-          </p>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 my-4">
-            <p className="text-green-800">
-              "I recently built a similar WordPress site for a fitness coach — you can see it here: 
-              [link]. We focused on mobile responsiveness and lead capture forms, which resulted in 
-              a 40% increase in sign-ups."
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #5: Lowballing Your Rate
-          </h2>
-          <p>
-            <strong>What freelancers do:</strong> Bid $5-$10/hr below their actual rate to "be competitive."
-          </p>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Clients equate lower prices with lower quality. A study by Upwork found that <strong>higher-priced 
-            freelancers win 2.5x more jobs</strong> because clients perceive them as more experienced and reliable.
-          </p>
-          <p>
-            Think about it — would you hire the cheapest doctor? The cheapest mechanic? Probably not. 
-            Clients feel the same way about freelancers.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Charge what you're worth. If you're a skilled developer, don't bid $20/hr when you should be 
-            charging $50/hr. Instead, justify your rate by showing the value you'll deliver.
-          </p>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 my-4">
-            <p className="text-green-800">
-              "My rate is $50/hr, and here's why that's a good investment: I'll build your site in 2 weeks 
-              (not 4), include 3 rounds of revisions, and guarantee it loads in under 2 seconds. Most 
-              developers charge $30/hr but take twice as long and cut corners on performance."
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #6: Not Asking a Question
-          </h2>
-          <p>
-            <strong>What freelancers do:</strong> End their proposal with a statement like "I look forward 
-            to hearing from you" or "Let me know if you're interested."
-          </p>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Statements don't get replies — questions do. If you end with a statement, the client has no 
-            reason to respond. They'll read your proposal, think "maybe later," and never get back to you.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            End every proposal with a specific question that encourages a reply. The best questions are:
-          </p>
-          <ul>
-            <li>Questions that ask for clarification ("Do you already have a design ready, or would you need help with that?")</li>
-            <li>Questions that propose next steps ("Would you have 15 minutes tomorrow to discuss the project scope?")</li>
-            <li>Questions that show you're thinking about their project ("What's the most important feature you want to prioritize?")</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #7: Using Jargon and Buzzwords
-          </h2>
-          <p>
-            <strong>What freelancers write:</strong>
-          </p>
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4 my-4">
-            <p className="text-red-800">
-              "I'll leverage my expertise in agile methodologies and DevOps practices to deliver a scalable 
-              solution with optimal ROI. My approach focuses on synergy between frontend and backend 
-              components to create a seamless user experience."
-            </p>
-          </div>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Most clients aren't tech experts. They don't care about "agile methodologies" or "DevOps practices." 
-            They care about getting their project done on time and on budget. Jargon makes you sound like you're 
-            trying too hard — or worse, hiding something.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Write like you speak. Use plain language. Instead of "leverage my expertise," say "I'll use my 
-            experience." Instead of "synergy between components," say "I'll make sure everything works together."
-          </p>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #8: Being Vague About Deliverables
-          </h2>
-          <p>
-            <strong>What freelancers write:</strong>
-          </p>
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4 my-4">
-            <p className="text-red-800">
-              "I'll build you a great website that looks professional and works well. I'll make sure it's 
-              responsive and easy to use."
-            </p>
-          </div>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            "Great website" is subjective. What's great to you might not be great to them. Clients want 
-            specificity. They want to know exactly what they're getting for their money.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Be specific about what you'll deliver. Instead of "a great website," say "a 5-page WordPress 
-            website with: homepage, about page, services page, blog, and contact form. I'll include SEO 
-            optimization, mobile responsiveness, and 3 rounds of design revisions."
-          </p>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #9: Not Personalizing for the Client
-          </h2>
-          <p>
-            <strong>What freelancers do:</strong> Send the exact same proposal to every client, changing 
-            only the client's name.
-          </p>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Clients can spot a template proposal instantly. If your proposal doesn't mention anything 
-            specific about their business, their project, or their goals, they'll assume you're just 
-            spamming job posts.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Spend 2-3 minutes researching the client before writing your proposal. Look at their website, 
-            their social media, or their previous projects. Mention something you find — a recent product 
-            launch, a specific feature they have, or even their company values.
-          </p>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 my-4">
-            <p className="text-green-800">
-              "I checked out your website and loved the way you showcase your handmade jewelry — especially 
-              the 'Crafted with Care' section. I'd love to help you create an e-commerce site that captures 
-              that same warmth and makes it easy for customers to browse and buy."
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Mistake #10: Focusing on Features Instead of Benefits
-          </h2>
-          <p>
-            <strong>What freelancers write:</strong>
-          </p>
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4 my-4">
-            <p className="text-red-800">
-              "I'll build your site using React and Node.js. It will have a modern design with clean 
-              typography. I'll use responsive design so it looks good on mobile."
-            </p>
-          </div>
-          <p>
-            <strong>Why it kills your win rate:</strong>
-          </p>
-          <p>
-            Clients don't care about React or Node.js — they care about what those technologies will do 
-            for them. Features tell them what you'll build. Benefits tell them why it matters.
-          </p>
-          <p>
-            <strong>The fix:</strong>
-          </p>
-          <p>
-            Always tie your features to benefits. Instead of "I'll use React," say "I'll use React so 
-            your site loads fast and feels smooth, which means more visitors will stay and convert." 
-            Instead of "responsive design," say "your site will look great on every device, so customers 
-            can shop from anywhere."
-          </p>
-
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Putting It All Together: A Perfect Proposal Example
-          </h2>
-          <p>
-            Now that you know what to avoid, let's see what a winning proposal looks like. Here's a 
-            real proposal that won a $15,000 web design job:
+            Open with a specific detail from their job post. Reference their company name, the 
+            exact problem they described, or a question they asked. This proves you actually read 
+            the posting — and that you&apos;re not spamming 30 jobs with copy-paste proposals.
           </p>
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 my-6">
-            <p className="text-slate-700 font-medium mb-2">Subject: Quick question about your e-commerce redesign</p>
-            <p className="text-slate-600">Hi Mark,</p>
-            <p className="text-slate-600 mt-3">
-              I saw your post about redesigning your Shopify store and specifically mentioned wanting 
-              to improve your checkout flow — that's a smart focus, since 70% of carts get abandoned 
-              at that stage.
-            </p>
-            <p className="text-slate-600 mt-3">
-              I recently redesigned a similar store for Green Organics where we simplified the checkout 
-              from 7 steps to 3 — their abandonment rate dropped by 32% in the first month. You can see 
-              the live site here: [link].
-            </p>
-            <p className="text-slate-600 mt-3">
-              For your project, I'd focus on: (1) streamlining the checkout process, (2) adding product 
-              reviews to build trust, and (3) implementing a cart recovery email system.
-            </p>
-            <p className="text-slate-600 mt-3">
-              Quick question — do you already have a design mockup in mind, or would you need help with 
-              the design direction?
-            </p>
-            <p className="text-slate-600 mt-3">Best,<br />Alex</p>
+            <p className="text-sm font-medium text-red-600 mb-2">Bad:</p>
+            <p className="text-slate-600 italic">&quot;Hi, I saw your job post and I&apos;m very interested in working with you. I have 5 years of experience...&quot;</p>
+            <p className="text-sm font-medium text-green-600 mb-2 mt-4">Good:</p>
+            <p className="text-slate-600 italic">&quot;Your Shopify store&apos;s checkout flow has a 68% cart abandonment rate — I helped an e-commerce client cut that to 41% by redesigning their 3-step checkout into a single page.&quot;</p>
           </div>
-          <p>
-            Let's break down why this works:
-          </p>
-          <ul>
-            <li><strong>Specific opening:</strong> Mentions their e-commerce redesign and checkout flow</li>
-            <li><strong>Value first:</strong> Talks about reducing abandonment rate, not just "doing a redesign"</li>
-            <li><strong>Relevant sample:</strong> Links to a similar project with specific results</li>
-            <li><strong>Clear deliverables:</strong> Lists exactly what they'll focus on</li>
-            <li><strong>Ends with a question:</strong> Encourages a reply</li>
-            <li><strong>Short:</strong> Less than 200 words</li>
-          </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            How to Fix Your Proposals Today
+            Mistake #2: Talking About Yourself Instead of Their Problem
           </h2>
           <p>
-            Ready to stop making these mistakes? Here's your action plan:
+            Most proposals read like resumes: &quot;I am a skilled developer with 7 years of 
+            experience in React, Node.js, MongoDB...&quot; The client doesn&apos;t care about your 
+            tech stack yet. They care about whether you can solve their problem.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Flip the script. Lead with <strong>their pain point</strong>, then briefly explain how 
+            you&apos;ve solved something similar. A good rule of thumb: spend 70% of your proposal 
+            talking about them and their project, 30% about yourself.
+          </p>
+          <p>
+            According to Upwork&apos;s own data, proposals that address the client&apos;s specific 
+            problem in the first two sentences have a <strong>3x higher response rate</strong>.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #3: Writing Proposals That Are Too Long
+          </h2>
+          <p>
+            Some freelancers treat proposals like cover letters — 500+ words covering every 
+            skill, every past project, and every certification. On Upwork, this backfires. 
+            Clients are busy. They skim. Long proposals get closed before the second paragraph.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Keep your proposal between <strong>100 and 200 words</strong>. That&apos;s enough to 
+            show you understand the problem, prove you can solve it, and ask a question. 
+            If the client wants more detail, they&apos;ll ask for it on the call — and that&apos;s 
+            exactly where you want to be: on a call, not in a proposal.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #4: Not Including Social Proof or Results
+          </h2>
+          <p>
+            Saying &quot;I&apos;m experienced&quot; means nothing without evidence. Every freelancer 
+            on Upwork claims to be experienced, reliable, and detail-oriented. Without 
+            proof, those words are empty.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Quantify your results. Instead of &quot;I helped a client with their website,&quot; 
+            write &quot;I redesigned a SaaS landing page that increased sign-ups by 34% in 
+            6 weeks.&quot; Numbers are memorable. Numbers build trust.
+          </p>
+          <p>
+            If you&apos;re new and don&apos;t have results yet, link to a relevant portfolio piece, 
+            GitHub repo, or case study. Anything tangible beats vague claims. For more on 
+            crafting proposals that showcase your results effectively, check out our{" "}
+            <Link href="/blog/upwork-proposal-templates" className="text-indigo-600 font-medium hover:underline">
+              Upwork proposal templates guide
+            </Link>.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #5: Bidding Too Low (or Too High Without Justification)
+          </h2>
+          <p>
+            New freelancers often bid 30-50% below the client&apos;s budget thinking it&apos;ll 
+            make them more competitive. It doesn&apos;t. Low bids signal low confidence and 
+            low quality. Clients on Upwork have learned that cheap freelancers cost more 
+            in the long run.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Bid at or slightly above the client&apos;s budget — but justify it. If you&apos;re 
+            charging $75/hr in a sea of $30/hr bids, explain why: &quot;I charge more because 
+            I deliver in half the time with fewer revisions. My last 3 projects were 
+            delivered 2 days ahead of schedule.&quot;
+          </p>
+          <p>
+            A study by And.co found that freelancers who raised their rates by 20% saw 
+            only a <strong>5% drop in project volume</strong> — meaning they earned significantly 
+            more per hour for roughly the same amount of work.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #6: Not Asking a Question at the End
+          </h2>
+          <p>
+            A proposal that ends with &quot;I look forward to working with you&quot; is a dead end. 
+            It gives the client nothing to respond to. The goal of a proposal isn&apos;t to get 
+            hired — it&apos;s to start a conversation.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            End with a specific, thoughtful question that shows you&apos;re already thinking 
+            about their project:
+          </p>
+          <ul>
+            <li>&quot;Are you currently using [tool/platform], or would you be open to alternatives?&quot;</li>
+            <li>&quot;What&apos;s the biggest bottleneck in your current workflow?&quot;</li>
+            <li>&quot;Would you prefer a quick 15-minute call to discuss the scope, or should I send a detailed proposal document first?&quot;</li>
+          </ul>
+          <p>
+            Questions double your response rate because they create a natural opening for the 
+            client to reply.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #7: Applying to Every Job Without Filtering
+          </h2>
+          <p>
+            Sending 30 proposals a day sounds productive, but it&apos;s not. When you apply 
+            to everything, your proposals are shallow, generic, and forgettable. You waste 
+            Connects and time. It&apos;s the freelance equivalent of cold-spraying a crowd 
+            with a hose instead of aiming at the right target.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Apply to <strong>5-8 jobs per day</strong> that are a strong match for your skills 
+            and experience. Look for jobs where:
+          </p>
+          <ul>
+            <li>The client has a verified payment method</li>
+            <li>The job description is detailed (vague posts = vague clients)</li>
+            <li>You have relevant samples in your portfolio</li>
+            <li>Less than 15 proposals have been submitted (lower competition)</li>
+          </ul>
+          <p>
+            Quality over quantity. Five well-crafted proposals will outperform thirty 
+            generic ones every time. For more strategies on getting started efficiently, 
+            see our guide on{" "}
+            <Link href="/blog/how-to-get-first-job-on-upwork" className="text-indigo-600 font-medium hover:underline">
+              how to get your first job on Upwork
+            </Link>.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #8: Ignoring the Client&apos;s Preferred Communication Style
+          </h2>
+          <p>
+            Some clients are formal (&quot;We are seeking an experienced developer...&quot;), and 
+            some are casual (&quot;Need someone to build a quick landing page!&quot;). If you send 
+            a stiff, corporate proposal to a laid-back client — or a casual pitch to a 
+            Fortune 500 hiring manager — you&apos;re creating an immediate mismatch.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Mirror the client&apos;s tone. If their job post is formal, use professional 
+            language. If they&apos;re casual and use exclamation points, match that energy. 
+            People hire people they feel comfortable with — and communication style is 
+            the first signal.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #9: Submitting Proposals Hours After the Job Was Posted
+          </h2>
+          <p>
+            On Upwork, timing matters — a lot. Clients often review proposals in the 
+            order they come in, and many hire within the first 24 hours. If you&apos;re 
+            submitting proposal #47 to a job posted 6 hours ago, your chances of being 
+            seen drop significantly.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Set up RSS feeds or use Upwork&apos;s saved search feature to get notified of new 
+            jobs immediately. Aim to be among the <strong>first 5-10 proposals</strong> on 
+            any job. An average proposal submitted early will often beat a great proposal 
+            submitted late.
+          </p>
+          <p>
+            Top freelancers report checking Upwork 3-4 times daily and responding to new 
+            posts within 30-60 minutes. This alone can double your interview rate.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Mistake #10: Reusing the Same Proposal Across Different Jobs
+          </h2>
+          <p>
+            This is the most common mistake of all — and the most fatal. Clients can 
+            spot a recycled proposal from a mile away. If your proposal could apply to 
+            any job (not just the one you&apos;re bidding on), it&apos;s too generic.
+          </p>
+          <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">What to do instead</h3>
+          <p>
+            Customize every proposal. At minimum, make sure each proposal includes:
           </p>
           <ol>
-            <li><strong>Review your last 5 proposals.</strong> Circle all the generic openings, jargon, and features without benefits. Rewrite them.</li>
-            <li><strong>Create a swipe file.</strong> Save 3-5 proven proposal structures that work for your niche. Customize them for each client, don't copy-paste.</li>
-            <li><strong>Track your results.</strong> Note which proposals get responses and which don't. Look for patterns. If you're not getting responses, you're still making mistakes.</li>
-            <li><strong>Use AI to help.</strong> Tools like ProposalAI can analyze job posts and generate personalized proposals in seconds — helping you avoid these mistakes automatically.</li>
+            <li><strong>A reference to the specific project</strong> — name the deliverable or problem</li>
+            <li><strong>A relevant example</strong> — link to one piece of work that directly relates</li>
+            <li><strong>A tailored question</strong> — one that only makes sense for this particular job</li>
           </ol>
+          <p>
+            If this sounds time-consuming, that&apos;s because it is. But it&apos;s also the #1 
+            reason top freelancers win more jobs with fewer proposals. For more examples 
+            of well-structured proposals, check out our{" "}
+            <Link href="/blog/upwork-cover-letter-examples" className="text-indigo-600 font-medium hover:underline">
+              Upwork cover letter examples
+            </Link>.
+          </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
-            Want to Save Time and Write Better Proposals?
+            Quick Reference: The Winning Proposal Checklist
+          </h2>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6 my-6">
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>First line references something specific from the job post</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>70% about their problem, 30% about your solution</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>100-200 words total — concise and skimmable</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>At least one quantified result or concrete example</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>Bid is justified with value, not just a number</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>Ends with a specific, answerable question</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>Tone matches the client&apos;s communication style</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span>Submitted within 60 minutes of the job posting</span>
+              </li>
+            </ul>
+          </div>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+            Stop Making These Mistakes — Start Winning
           </h2>
           <p>
-            Writing personalized proposals takes time — time you could be spending on billable work. 
-            That's why I built{" "}
+            Fixing even 3 or 4 of these mistakes can transform your Upwork results. 
+            Most freelancers never realize they&apos;re making them — they just assume 
+            the platform is too competitive or their rates are too high. The truth is, 
+            a well-crafted proposal beats a low price every time.
+          </p>
+          <p>
+            If you want to skip the learning curve and start sending optimized proposals 
+            immediately,{" "}
             <Link href="/" className="text-indigo-600 font-medium hover:underline">
               ProposalAI
-            </Link>
-            .
-          </p>
-          <p>
-            Paste any Upwork job description, and ProposalAI generates 3 optimized proposals in 30 seconds. 
-            It analyzes the client's needs, identifies their pain points, and writes proposals that:
-          </p>
-          <ul>
-            <li>Open with specific details from the job post</li>
-            <li>Focus on benefits, not features</li>
-            <li>End with a question that encourages replies</li>
-            <li>Stay under 200 words</li>
-          </ul>
-          <p>
-            Top freelancers using ProposalAI report a <strong>300% increase in their win rate</strong>. 
-            Want to see what it generates for you?
+            </Link>{" "}
+            can help. Paste any Upwork job description, and it generates 3 tailored 
+            proposal versions in 30 seconds — each one designed to avoid every mistake 
+            on this list. It includes client analysis, keyword matching, and pricing 
+            suggestions based on your skill level.
           </p>
           <p>
             <Link href="/auth/signup" className="text-indigo-600 font-medium hover:underline">
-              Try ProposalAI free →
+              Try it free →
             </Link>
           </p>
         </div>
@@ -485,7 +384,7 @@ export default function BlogPost() {
                 5 Upwork Proposal Templates That Actually Win Jobs (2025)
               </h3>
               <p className="mt-2 text-sm text-slate-600">
-                Copy-paste these proven templates for web design, writing, development, and virtual assistant jobs.
+                Copy-paste these proven proposal templates for web design, writing, development, and virtual assistant jobs.
               </p>
             </Link>
             <Link
@@ -499,7 +398,7 @@ export default function BlogPost() {
                 Upwork Cover Letter Examples: 7 Samples That Get Responses
               </h3>
               <p className="mt-2 text-sm text-slate-600">
-                Real cover letters from top-rated Upwork freelancers. Learn exactly why they work.
+                Real cover letters from top-rated Upwork freelancers. Break down exactly why they work and how to adapt them.
               </p>
             </Link>
           </div>
@@ -507,10 +406,10 @@ export default function BlogPost() {
 
         <div className="mt-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-10 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white">
-            Generate winning proposals in 30 seconds
+            Stop losing jobs to bad proposals
           </h2>
           <p className="mt-3 text-indigo-100 max-w-xl mx-auto">
-            Paste a job description, get 3 optimized proposals. Free to try.
+            Generate proposals that avoid every mistake on this list. AI-powered, client-specific, ready in 30 seconds.
           </p>
           <Link href="/auth/signup">
             <Button size="lg" className="mt-6 bg-white text-indigo-700 hover:bg-indigo-50">
@@ -520,6 +419,37 @@ export default function BlogPost() {
         </div>
       </article>
 
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
+            description:
+              "Avoid the 10 most common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win more contracts and boost your win rate.",
+            author: {
+              "@type": "Organization",
+              name: "ProposalAI",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proposalai.top/icon.svg",
+              },
+            },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://proposalai.top/blog/${slug}`,
+            },
+          }),
+        }}
+      />
       <Footer />
     </div>
   );

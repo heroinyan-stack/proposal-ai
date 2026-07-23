@@ -1,19 +1,46 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
-export const metadata = {
-  title: "Upwork Cover Letter Examples: 7 Samples That Get Responses",
-  description:
-    "7 real Upwork cover letter examples from top-rated freelancers. Learn the exact structure, hooks, and techniques that make clients respond. Plus a free template.",
-  keywords: [
-    "upwork cover letter examples",
-    "upwork cover letter sample",
-    "upwork proposal examples",
-    "best upwork cover letters",
-    "upwork cover letter tips",
-  ],
-};
+const slug = "upwork-cover-letter-examples";
+
+const title = "Upwork Cover Letter Examples: 7 Samples That Get Responses";
+const description =
+  "7 real Upwork cover letter examples from top-rated freelancers. Learn the exact structure, hooks, and techniques that make clients respond. Plus a free template.";
+const keywords = [
+  "upwork cover letter examples",
+  "upwork cover letter sample",
+  "upwork proposal examples",
+  "best upwork cover letters",
+  "upwork cover letter tips",
+];
+
+export function generateMetadata(): Metadata {
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: `https://proposalai.top/blog/${slug}`,
+      siteName: "ProposalAI",
+      publishedTime: "2025-07-02",
+      authors: ["ProposalAI Team"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export default function BlogPost() {
   return (
@@ -36,7 +63,23 @@ export default function BlogPost() {
         </div>
       </header>
 
-      <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+      <nav className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <ol className="flex items-center gap-2 text-sm text-slate-500">
+          <li>
+            <Link href="/" className="hover:text-indigo-600 transition-colors">Home</Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href="/blog" className="hover:text-indigo-600 transition-colors">Blog</Link>
+          </li>
+          <li>/</li>
+          <li className="text-slate-900 font-medium truncate">
+            {title}
+          </li>
+        </ol>
+      </nav>
+
+      <article className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="mb-8">
           <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
             Examples
@@ -352,6 +395,67 @@ export default function BlogPost() {
           </Link>
         </div>
       </article>
+
+      <Script
+        id="breadcrumb-list"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://proposalai.top/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://proposalai.top/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: title,
+                item: `https://proposalai.top/blog/${slug}`,
+              },
+            ],
+          }),
+        }}
+      />
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: title,
+            description: description,
+            author: {
+              "@type": "Organization",
+              name: "ProposalAI",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ProposalAI",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://proposalai.top/icon.svg",
+              },
+            },
+            datePublished: "2025-07-02",
+            dateModified: "2025-07-02",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://proposalai.top/blog/${slug}`,
+            },
+          }),
+        }}
+      />
 
       <Footer />
     </div>

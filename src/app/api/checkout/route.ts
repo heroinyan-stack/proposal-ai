@@ -26,8 +26,12 @@ export async function POST(request: NextRequest) {
     }
 
     if (!productId) {
+      console.error('Missing CREEM product ID', {
+        pro_monthly: CREEM_PRODUCTS.pro_monthly ? 'set' : 'empty',
+        pro_yearly: CREEM_PRODUCTS.pro_yearly ? 'set' : 'empty',
+      })
       return NextResponse.json(
-        { error: 'Payment system not configured. Please set CREEM product IDs.' },
+        { error: `Payment not configured: product ID for "${planId}" is missing. Please contact support.` },
         { status: 500 }
       )
     }

@@ -13,7 +13,7 @@ const posts = [
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:
-      "Avoid these 10 common Upwork proposal mistakes that are silently destroying your chances of winning jobs. Learn what top-rated freelancers do differently.",
+      "Avoid these 10 common Upwork proposal mistakes that silently destroy your response rate. Learn what top-rated freelancers never do and boost your win rate.",
     readTime: "11 min",
     category: "Guides",
   },

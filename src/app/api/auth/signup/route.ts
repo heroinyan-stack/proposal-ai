@@ -3,6 +3,14 @@ import { createAdminClient } from '@/utils/supabase/admin'
 
 export async function POST(request: NextRequest) {
   try {
+    const contentType = request.headers.get('content-type') || ''
+    if (!contentType.includes('application/json')) {
+      return NextResponse.json(
+        { error: 'Content-Type must be application/json' },
+        { status: 400 }
+      )
+    }
+
     const { email, password, fullName } = await request.json()
 
     if (!email || !password) {
@@ -21,7 +29,37 @@ export async function POST(request: NextRequest) {
 
     const supabaseAdmin = createAdminClient()
 
-    // 1. Create user with admin API (email_confirm: true skips email verification)
+    // 1. Check if user already exists
+    try {
+      const { data: existingUsers } = await supabaseAdmin.auth.admin.listUsers()
+      const existing = existingUsers?.users?.find(u => u.email === email)
+      
+      if (existing) {
+        // If user exists but has no identity, fix their password
+        if (!existing.identities || existing.identities.length === 0) {
+          await supabaseAdmin.auth.admin.updateUserById(existing.id, {
+            email_confirm: true,
+            password,
+          })
+          console.log('Fixed identity for existing user:', existing.id)
+          return NextResponse.json({
+            success: true,
+            userId: existing.id,
+            message: 'Account updated, please sign in',
+          })
+        }
+        
+        return NextResponse.json(
+          { error: 'An account with this email already exists. Please sign in instead.' },
+          { status: 409 }
+        )
+      }
+    } catch (e) {
+      console.error('User lookup warning:', e)
+      // Continue with creation
+    }
+
+    // 2. Create user with admin API
     const { data, error } = await supabaseAdmin.auth.admin.createUser({
       email,
       password,
@@ -32,9 +70,11 @@ export async function POST(request: NextRequest) {
     })
 
     if (error) {
-      // If user already exists, return success
       if (error.message?.includes('already') || error.code === 'email_exists') {
-        return NextResponse.json({ success: true, message: 'User already exists' })
+        return NextResponse.json(
+          { error: 'An account with this email already exists. Please sign in instead.' },
+          { status: 409 }
+        )
       }
       return NextResponse.json({ error: error.message }, { status: 400 })
     }
@@ -44,21 +84,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to create user' }, { status: 500 })
     }
 
-    // 2. Ensure identity is created (fix for known issue where admin.createUser doesn't auto-create identity)
+    // 3. Force update password to ensure identity is properly created
+    // This fixes the known Supabase issue where admin.createUser doesn't create a proper identity
     try {
-      const { data: userData } = await supabaseAdmin.auth.admin.getUserById(userId)
-      
-      if (!userData?.user?.identities || userData.user.identities.length === 0) {
-        // Force set password and confirm to ensure login works
-        await supabaseAdmin.auth.admin.updateUserById(userId, {
-          email_confirm: true,
-          password,
-        })
-        console.log('Identity fixed for user:', userId)
-      }
+      await supabaseAdmin.auth.admin.updateUserById(userId, {
+        email_confirm: true,
+        password,
+      })
+      console.log('Password identity ensured for user:', userId)
     } catch (e) {
-      console.error('Identity fix warning:', e)
-      // Continue anyway - the user might still be able to sign in
+      console.error('Password identity fix warning:', e)
+      // Continue anyway
     }
 
     return NextResponse.json({

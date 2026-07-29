@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | ProposalAI",
   },
   description:
-    "AI-powered proposal generator for Upwork and Fiverr freelancers. Win 3x more contracts with optimized proposals, client analysis, keyword optimization, and pricing advice. Generate 3 proposal versions in 30 seconds.",
+    "AI-powered proposal generator for Upwork and Fiverr freelancers. Generate 3 proposal versions in 30 seconds with client analysis, keyword optimization, and pricing advice. Craft better proposals, faster.",
   keywords: [
     "upwork proposal generator",
     "fiverr proposal template",
@@ -56,26 +56,25 @@ export const metadata: Metadata = {
     siteName: "ProposalAI",
     title: "ProposalAI - AI Proposal Generator for Upwork & Fiverr Freelancers",
     description:
-      "Win 3x more Upwork and Fiverr contracts with AI-optimized proposals. Generate 3 versions in 30 seconds with client analysis, keyword optimization, and pricing advice.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ProposalAI - AI Proposal Generator",
-      },
-    ],
+      "AI-optimized proposals for Upwork and Fiverr freelancers. Generate 3 versions in 30 seconds with client analysis, keyword optimization, and pricing advice.",
   },
   twitter: {
     card: "summary_large_image",
     title: "ProposalAI - AI Proposal Generator for Upwork & Fiverr",
     description:
-      "Win 3x more freelance contracts with AI-optimized proposals. Generate Upwork cover letters in 30 seconds.",
+      "AI-optimized proposals for freelancers. Generate Upwork cover letters in 30 seconds.",
     creator: "@proposalai",
-    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": [
+        {
+          url: "/feed.xml",
+          title: "ProposalAI Blog RSS Feed",
+        },
+      ],
+    },
   },
   verification: {
     google: "google-site-verification-code",

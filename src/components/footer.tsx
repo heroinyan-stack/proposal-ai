@@ -1,6 +1,19 @@
+'use client'
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { createClient } from "@/utils/supabase/client";
 
 export function Footer() {
+  const [currentUser, setCurrentUser] = useState<any>(null)
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setCurrentUser(user)
+    })
+  }, [])
+
   return (
     <footer className="bg-slate-900 text-slate-400 py-12 mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,11 +28,14 @@ export function Footer() {
               <span className="text-lg font-bold text-white">ProposalAI</span>
             </Link>
             <p className="mt-3 text-sm max-w-xs">
-              AI-powered proposal generator for Upwork and Fiverr freelancers. 
+              AI-powered proposal generator for Upwork and Fiverr freelancers.
               Win more contracts in less time.
             </p>
             <p className="mt-4 text-sm">
-              Support: <a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">support@proposalai.top</a>
+              Support: <a href="mailto:heroinyan@gmail.com" className="hover:text-white transition-colors">heroinyan@gmail.com</a>
+            </p>
+            <p className="mt-3 text-xs text-slate-500">
+              Powered by Anthropic Claude AI. <Link href="/about" className="hover:text-slate-300 underline">Learn more</Link>.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -28,8 +44,14 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
                 <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/auth/login" className="hover:text-white transition-colors">Sign In</Link></li>
-                <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
+                {currentUser ? (
+                  <li><Link href="/app" className="hover:text-white transition-colors">Dashboard</Link></li>
+                ) : (
+                  <>
+                    <li><Link href="/auth/login" className="hover:text-white transition-colors">Sign In</Link></li>
+                    <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
+                  </>
+                )}
               </ul>
             </div>
             <div>
@@ -55,7 +77,7 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="mailto:heroinyan@gmail.com" className="hover:text-white transition-colors">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -65,7 +87,7 @@ export function Footer() {
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
-            <a href="mailto:support@proposalai.top" className="hover:text-white transition-colors">Contact</a>
+            <a href="mailto:heroinyan@gmail.com" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
       </div>

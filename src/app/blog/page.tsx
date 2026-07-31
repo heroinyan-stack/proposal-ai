@@ -10,6 +10,14 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-skills-test",
+    title: "Upwork Skills Tests: Do They Matter and Which to Take (2025)",
+    excerpt:
+      "Find out which Upwork Skills Tests are worth taking, how they boost your search ranking, and the best strategy to pass them and win more contracts.",
+    readTime: "12 min",
+    category: "Guides",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:

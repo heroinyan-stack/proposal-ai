@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/blog/upwork-skills-test`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/blog/upwork-proposal-mistakes`,
       lastModified: new Date(),
       changeFrequency: "monthly",

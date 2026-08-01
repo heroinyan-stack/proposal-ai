@@ -21,9 +21,19 @@ export default function PrivacyPage() {
               </div>
               <span className="text-xl font-bold text-slate-900">ProposalAI</span>
             </Link>
+            
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Pricing</Link>
+              <Link href="/blog" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">Blog</Link>
+              <Link href="/about" className="text-slate-600 hover:text-slate-900 transition-colors text-sm">About</Link>
+            </div>
+            
             <div className="flex items-center gap-3">
-              <Link href="/">
-                <Button variant="ghost" size="sm">Back</Button>
+              <Link href="/auth/login">
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button size="sm">Get Started</Button>
               </Link>
             </div>
           </div>
@@ -48,7 +58,7 @@ export default function PrivacyPage() {
               <li>Account information (email address, name) when you sign up</li>
               <li>Job posting content you paste into our service for generating proposals</li>
               <li>Generated proposals and usage data</li>
-              <li>Payment information processed through our payment provider Lemon Squeezy</li>
+              <li>Payment information processed through our payment provider Creem</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">How We Use Your Information</h2>
@@ -70,7 +80,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Third-Party Services</h2>
             <p className="text-slate-700 mb-4">
-              We use third-party services for payment processing (Lemon Squeezy) and authentication (Supabase). These services have their own privacy policies governing their use of your information.
+              We use third-party services for payment processing (Creem) and authentication (Supabase). These services have their own privacy policies governing their use of your information.
             </p>
 
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Cookies</h2>
@@ -88,7 +98,7 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="text-slate-700 font-medium">
-              Email: support@proposalai.top
+              Email: heroinyan@gmail.com
             </p>
 
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Changes to This Policy</h2>

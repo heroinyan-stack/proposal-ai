@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "freelance-client-communication",
+    title: "Freelance Client Communication: Templates for Every Situation (2025)",
+    excerpt:
+      "Copy-paste client communication templates for freelancers — kickoff, scope creep, delays, unresponsive clients, overdue invoices, and more. Keep clients happy and get paid on time.",
+    readTime: "12 min",
+    category: "Communication",
+    date: "2025-08-03",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:

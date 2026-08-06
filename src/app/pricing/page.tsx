@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { createClient } from '@/utils/supabase/client'
+import Script from 'next/script'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
@@ -64,7 +66,15 @@ const plans = [
 
 export default function PricingPage() {
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null)
+  const [currentUser, setCurrentUser] = useState<any>(null)
   const router = useRouter()
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setCurrentUser(user)
+    })
+  }, [])
 
   const handleUpgrade = async (planId: string) => {
     if (planId === 'free') {
@@ -85,16 +95,20 @@ export default function PricingPage() {
 
       if (!response.ok) {
         if (response.status === 401) {
-          router.push('/auth/login')
+          router.push('/auth/login?message=Please sign in to upgrade your plan')
           return
         }
         throw new Error(data.error || 'Failed to create checkout')
       }
 
+      if (!data.url) {
+        throw new Error('No checkout URL returned. Please contact support.')
+      }
+
       window.location.href = data.url
-    } catch (error) {
+    } catch (error: any) {
       console.error('Checkout error:', error)
-      alert('Failed to start checkout. Please try again.')
+      alert(error.message || 'Failed to start checkout. Please try again.')
     } finally {
       setLoadingPlan(null)
     }
@@ -116,9 +130,26 @@ export default function PricingPage() {
             </Link>
             
             <div className="flex items-center gap-3">
-              <Link href="/">
-                <Button variant="ghost" size="sm">Back</Button>
+              <Link href="/blog">
+                <Button variant="ghost" size="sm">Blog</Button>
               </Link>
+              <Link href="/about">
+                <Button variant="ghost" size="sm">About</Button>
+              </Link>
+              {currentUser ? (
+                <Link href="/app">
+                  <Button size="sm">Go to App</Button>
+                </Link>
+              ) : (
+                <>
+                  <Link href="/auth/login">
+                    <Button variant="ghost" size="sm">Log In</Button>
+                  </Link>
+                  <Link href="/auth/signup">
+                    <Button size="sm">Get Started</Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -226,7 +257,7 @@ export default function PricingPage() {
               },
               {
                 question: 'What payment methods do you accept?',
-                answer: 'We accept all major credit cards (Visa, Mastercard, American Express), as well as PayPal and Apple Pay through our payment processor, Lemon Squeezy.'
+                answer: 'We accept all major credit cards (Visa, Mastercard, American Express), as well as PayPal and Apple Pay through our payment processor, Creem.'
               },
               {
                 question: 'What is your refund policy?',
@@ -241,6 +272,51 @@ export default function PricingPage() {
           </div>
         </div>
       </main>
+
+      <Script
+        id="faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Is there a free trial for Pro?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! Every Pro plan comes with a 7-day free trial. You won't be charged until the trial ends, and you can cancel anytime during the trial."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Can I cancel anytime?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely. There are no long-term contracts. You can cancel your subscription at any time, and you'll continue to have access until the end of your billing period."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "What payment methods do you accept?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We accept all major credit cards (Visa, Mastercard, American Express), as well as PayPal and Apple Pay through our payment processor, Creem."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "What is your refund policy?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We offer a 14-day money-back guarantee. If you're not satisfied with ProposalAI, contact us within 14 days for a full refund, no questions asked."
+                }
+              }
+            ]
+          })
+        }}
+      />
 
       <Footer />
     </div>

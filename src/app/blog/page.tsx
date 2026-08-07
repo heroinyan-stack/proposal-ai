@@ -18,6 +18,22 @@ const posts = [
     category: "Guides",
   },
   {
+    slug: "upwork-proposal-for-designers",
+    title: "Upwork Proposals for Designers: Win More Creative Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win graphic design, UI/UX, branding, and illustration jobs. Templates, examples, and niche-specific strategies.",
+    readTime: "11 min",
+    category: "Designers",
+  },
+  {
+    slug: "freelance-client-communication",
+    title: "Freelance Client Communication: Templates for Every Situation (2025)",
+    excerpt:
+      "Copy-paste client communication templates for freelancers — kickoff, scope creep, delays, unresponsive clients, overdue invoices, and more. Keep clients happy and get paid on time.",
+    readTime: "12 min",
+    category: "Communication",
+  },
+  {
     slug: "upwork-proposal-templates",
     title: "5 Upwork Proposal Templates That Actually Win Jobs (2025)",
     excerpt:

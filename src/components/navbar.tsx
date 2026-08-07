@@ -1,9 +1,29 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from './ui/button'
+import { createClient } from '@/utils/supabase/client'
 
 export function Navbar() {
+  const [user, setUser] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const supabase = createClient()
+    
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user)
+      setLoading(false)
+    })
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,14 +43,30 @@ export function Navbar() {
             <a href="#pricing" className="text-slate-600 hover:text-slate-900 transition-colors">Pricing</a>
           </div>
           
-          <div className="flex items-center gap-3">
-            <Link href="/auth/login">
-              <Button variant="ghost" size="sm">Log In</Button>
-            </Link>
-            <Link href="/auth/signup">
-              <Button size="sm">Start Free</Button>
-            </Link>
-          </div>
+          {loading ? (
+            <div className="flex items-center gap-3">
+              <div className="w-16 h-8 bg-slate-100 animate-pulse rounded" />
+              <div className="w-20 h-8 bg-slate-100 animate-pulse rounded" />
+            </div>
+          ) : user ? (
+            <div className="flex items-center gap-3">
+              <Link href="/app">
+                <Button variant="ghost" size="sm">Dashboard</Button>
+              </Link>
+              <Link href="/app">
+                <Button size="sm">Go to App</Button>
+              </Link>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <Link href="/auth/login">
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+              <Link href="/auth/signup">
+                <Button size="sm">Start Free</Button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </nav>

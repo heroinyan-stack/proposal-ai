@@ -10,6 +10,14 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "cold-email-for-freelancers",
+    title: "Cold Email Templates for Freelancers: Get Clients Without Platforms (2025)",
+    excerpt:
+      "Learn how to write cold emails that land freelance clients. Includes 7 proven templates, personalization techniques, and outreach strategies to win high-paying work without Upwork or Fiverr.",
+    readTime: "12 min",
+    category: "Outreach",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:

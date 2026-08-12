@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import { BreadcrumbSchema } from "@/components/seo-schemas";
 
 export const metadata = {
   title: "Blog - Upwork Proposal Tips & Freelance Guides",
@@ -10,12 +12,61 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-connects-tips",
+    title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+    excerpt:
+      "Learn exactly how Upwork Connects work in 2025, how to spend them wisely, earn more, and maximize your ROI on every proposal.",
+    readTime: "12 min",
+    category: "Guides",
+  },
+  {
+    slug: "freelance-contract-templates",
+    title: "Freelance Contract Templates: Protect Yourself on Every Project (2025)",
+    excerpt:
+      "Copy-paste freelance contract templates for fixed-price, hourly, and retainer projects. Covers payment terms, IP transfer, kill fees, scope creep, and the 7 clauses every freelancer needs.",
+    readTime: "12 min",
+    category: "Contracts",
+    date: "2025-08-11",
+  },
+  {
+    slug: "upwork-proposal-for-writers",
+    title: "Upwork Proposals for Writers: Win More Content Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win blog writing, copywriting, technical writing, SEO content, and ghostwriting jobs. Templates, examples, and niche-specific strategies for writers.",
+    readTime: "11 min",
+    category: "Writers",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:
-      "Avoid these critical Upwork proposal mistakes that silently destroy your chances. Learn what top 1% freelancers do differently to win more contracts.",
+      "Discover the 10 critical mistakes destroying your Upwork win rate. Learn exactly what top-rated freelancers do differently to land high-paying clients consistently.",
     readTime: "11 min",
     category: "Guides",
+  },
+  {
+    slug: "cold-email-for-freelancers",
+    title: "Cold Email Templates for Freelancers: Get Clients Without Platforms (2025)",
+    excerpt:
+      "Learn how to write cold emails that land freelance clients. Includes 7 proven templates, personalization techniques, and outreach strategies to win high-paying work without Upwork or Fiverr.",
+    readTime: "12 min",
+    category: "Outreach",
+  },
+  {
+    slug: "upwork-proposal-for-designers",
+    title: "Upwork Proposals for Designers: Win More Creative Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win graphic design, UI/UX, branding, and illustration jobs. Templates, examples, and niche-specific strategies.",
+    readTime: "11 min",
+    category: "Designers",
+  },
+  {
+    slug: "freelance-client-communication",
+    title: "Freelance Client Communication: Templates for Every Situation (2025)",
+    excerpt:
+      "Copy-paste client communication templates for freelancers — kickoff, scope creep, delays, unresponsive clients, overdue invoices, and more. Keep clients happy and get paid on time.",
+    readTime: "12 min",
+    category: "Communication",
   },
   {
     slug: "upwork-proposal-templates",
@@ -44,8 +95,29 @@ const posts = [
 ];
 
 export default function BlogIndex() {
+  const siteUrl = "https://proposalai.top";
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "ProposalAI Blog - Upwork Proposal Tips & Freelance Guides",
+    description:
+      "Proven strategies, templates, and examples to help freelancers win more contracts on Upwork and Fiverr.",
+    url: `${siteUrl}/blog`,
+    inLanguage: "en-US",
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <BreadcrumbSchema crumbs={[
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog" },
+      ]} />
+      <Script
+        id="jsonld-collection-blog"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+        strategy="afterInteractive"
+      />
       <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">

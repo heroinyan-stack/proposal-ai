@@ -12,12 +12,22 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-profile-summary-examples",
+    title: "How to Write an Upwork Profile Summary That Gets Clients (2025)",
+    excerpt:
+      "Learn how to write an Upwork profile summary that attracts high-paying clients. Includes 7 real examples from top-rated freelancers and a word-by-word template you can copy.",
+    readTime: "13 min",
+    category: "Profiles",
+    date: "2025-08-13",
+  },
+  {
     slug: "upwork-connects-tips",
     title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
     excerpt:
       "Learn exactly how Upwork Connects work in 2025, how to spend them wisely, earn more, and maximize your ROI on every proposal.",
     readTime: "12 min",
     category: "Guides",
+    date: "2025-08-12",
   },
   {
     slug: "freelance-contract-templates",

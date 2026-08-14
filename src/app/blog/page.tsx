@@ -12,6 +12,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-vs-fiverr",
+    title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+    excerpt:
+      "Upwork vs Fiverr in 2025: real fee numbers, how you actually get work, earnings potential, and which platform fits your niche. A data-backed comparison for freelancers.",
+    readTime: "10 min",
+    category: "Platform Guides",
+    date: "2025-08-14",
+  },
+  {
     slug: "upwork-profile-summary-examples",
     title: "How to Write an Upwork Profile Summary That Gets Clients (2025)",
     excerpt:

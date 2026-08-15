@@ -12,6 +12,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "freelance-pricing-strategies",
+    title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+    excerpt:
+      "Stop undercharging. Learn hourly vs fixed vs value-based pricing, a 1,000-hour formula for your minimum rate, 2025 rate benchmarks by niche, and how to raise your rates without losing clients.",
+    readTime: "11 min",
+    category: "Pricing",
+    date: "2025-08-15",
+  },
+  {
     slug: "upwork-vs-fiverr",
     title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
     excerpt:

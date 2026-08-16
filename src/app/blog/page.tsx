@@ -12,6 +12,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-job-invitation-response",
+    title: "How to Respond to Upwork Job Invitations (Templates Included) (2025)",
+    excerpt:
+      "Client invited you to an Upwork job? Don't blow it. Learn the 4 types of invitations, how to spot scams, and copy 6 proven response templates for every scenario.",
+    readTime: "12 min",
+    category: "Templates",
+    date: "2025-08-16",
+  },
+  {
     slug: "freelance-pricing-strategies",
     title: "Freelance Pricing Strategies: How to Charge What You're Worth",
     excerpt:

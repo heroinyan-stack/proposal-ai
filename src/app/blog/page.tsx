@@ -12,6 +12,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-skills-test",
+    title: "Upwork Skills Tests: Do They Matter and Which to Take (2025)",
+    excerpt:
+      "Do Upwork Skills Tests actually help you win jobs? Find out which tests are worth taking, how they affect your search ranking, and a proven strategy to pass them in 2025.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "2025-08-18",
+  },
+  {
     slug: "fiverr-gig-promotion",
     title: "How to Promote Your Fiverr Gig: 12 Proven Strategies (2025)",
     excerpt:

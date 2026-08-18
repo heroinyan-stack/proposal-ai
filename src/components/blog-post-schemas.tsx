@@ -348,7 +348,7 @@ const ARTICLE_META: Record<string, ArticleMeta> = {
   "upwork-skills-test": {
     title: "Upwork Skills Tests: Do They Matter and Which to Take (2025)",
     description: "Upwork Skills Tests can boost your profile visibility and win rate. Find out which tests are worth taking, how they affect your search ranking, and the best strategy to pass them.",
-    publishedTime: "2025-07-08",
+    publishedTime: "2025-08-18",
     keywords: ["upwork skills test", "upwork skills tests worth taking", "upwork skills test answers", "upwork profile optimization", "upwork search ranking", "freelance certifications"],
   },
   "freelance-client-communication": {

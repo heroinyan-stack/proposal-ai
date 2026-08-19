@@ -354,7 +354,7 @@ const ARTICLE_META: Record<string, ArticleMeta> = {
   "freelance-client-communication": {
     title: "Freelance Client Communication: Templates for Every Situation (2025)",
     description: "Copy-paste client communication templates for freelancers — kickoff, scope creep, delays, unresponsive clients, overdue invoices, and more. Keep clients happy and get paid on time.",
-    publishedTime: "2025-07-08",
+    publishedTime: "2025-08-19",
     keywords: ["freelance client communication", "freelancer email templates", "client communication templates", "scope creep email", "overdue invoice email freelancer", "freelance client onboarding"],
   },
   "freelance-contract-templates": {

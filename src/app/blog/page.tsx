@@ -12,6 +12,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-for-developers",
+    title: "Upwork Proposals for Developers: Win More Web Dev Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win web development jobs — frontend, backend, full-stack, WordPress, and mobile. Includes a real template, portfolio tips, pricing benchmarks, and a dev-specific checklist.",
+    readTime: "12 min",
+    category: "Developers",
+    date: "2025-08-20",
+  },
+  {
     slug: "freelance-client-communication",
     title: "Freelance Client Communication: Templates for Every Situation (2025)",
     excerpt:

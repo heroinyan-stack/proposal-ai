@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/footer";
+import { BreadcrumbSchema } from "@/components/seo-schemas";
 
 export const metadata = {
   title: "Blog - Upwork Proposal Tips & Freelance Guides",
@@ -10,12 +12,126 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-for-developers",
+    title: "Upwork Proposals for Developers: Win More Web Dev Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win web development jobs — frontend, backend, full-stack, WordPress, and mobile. Includes a real template, portfolio tips, pricing benchmarks, and a dev-specific checklist.",
+    readTime: "12 min",
+    category: "Developers",
+    date: "2025-08-20",
+  },
+  {
+    slug: "freelance-client-communication",
+    title: "Freelance Client Communication: Templates for Every Situation (2025)",
+    excerpt:
+      "Copy-paste client communication templates for freelancers — kickoff, scope creep, delays, unresponsive clients, overdue invoices, and more. Keep clients happy and get paid on time.",
+    readTime: "12 min",
+    category: "Communication",
+    date: "2025-08-19",
+  },
+  {
+    slug: "upwork-skills-test",
+    title: "Upwork Skills Tests: Do They Matter and Which to Take (2025)",
+    excerpt:
+      "Do Upwork Skills Tests actually help you win jobs? Find out which tests are worth taking, how they affect your search ranking, and a proven strategy to pass them in 2025.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "2025-08-18",
+  },
+  {
+    slug: "fiverr-gig-promotion",
+    title: "How to Promote Your Fiverr Gig: 12 Proven Strategies (2025)",
+    excerpt:
+      "Learn 12 proven strategies to promote your Fiverr gig and get more orders — from Fiverr SEO and Buyer Requests to social media, Pinterest, YouTube, and off-platform marketing.",
+    readTime: "11 min",
+    category: "Marketing",
+    date: "2025-08-17",
+  },
+  {
+    slug: "upwork-job-invitation-response",
+    title: "How to Respond to Upwork Job Invitations (Templates Included) (2025)",
+    excerpt:
+      "Client invited you to an Upwork job? Don't blow it. Learn the 4 types of invitations, how to spot scams, and copy 6 proven response templates for every scenario.",
+    readTime: "12 min",
+    category: "Templates",
+    date: "2025-08-16",
+  },
+  {
+    slug: "freelance-pricing-strategies",
+    title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+    excerpt:
+      "Stop undercharging. Learn hourly vs fixed vs value-based pricing, a 1,000-hour formula for your minimum rate, 2025 rate benchmarks by niche, and how to raise your rates without losing clients.",
+    readTime: "11 min",
+    category: "Pricing",
+    date: "2025-08-15",
+  },
+  {
+    slug: "upwork-vs-fiverr",
+    title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+    excerpt:
+      "Upwork vs Fiverr in 2025: real fee numbers, how you actually get work, earnings potential, and which platform fits your niche. A data-backed comparison for freelancers.",
+    readTime: "10 min",
+    category: "Platform Guides",
+    date: "2025-08-14",
+  },
+  {
+    slug: "upwork-profile-summary-examples",
+    title: "How to Write an Upwork Profile Summary That Gets Clients (2025)",
+    excerpt:
+      "Learn how to write an Upwork profile summary that attracts high-paying clients. Includes 7 real examples from top-rated freelancers and a word-by-word template you can copy.",
+    readTime: "13 min",
+    category: "Profiles",
+    date: "2025-08-13",
+  },
+  {
+    slug: "upwork-connects-tips",
+    title: "How to Use Upwork Connects Wisely (Complete Guide 2025)",
+    excerpt:
+      "Learn exactly how Upwork Connects work in 2025, how to spend them wisely, earn more, and maximize your ROI on every proposal.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "2025-08-12",
+  },
+  {
+    slug: "freelance-contract-templates",
+    title: "Freelance Contract Templates: Protect Yourself on Every Project (2025)",
+    excerpt:
+      "Copy-paste freelance contract templates for fixed-price, hourly, and retainer projects. Covers payment terms, IP transfer, kill fees, scope creep, and the 7 clauses every freelancer needs.",
+    readTime: "12 min",
+    category: "Contracts",
+    date: "2025-08-11",
+  },
+  {
+    slug: "upwork-proposal-for-writers",
+    title: "Upwork Proposals for Writers: Win More Content Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win blog writing, copywriting, technical writing, SEO content, and ghostwriting jobs. Templates, examples, and niche-specific strategies for writers.",
+    readTime: "11 min",
+    category: "Writers",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:
-      "Avoid these common Upwork proposal mistakes that are silently killing your win rate. Learn what top-rated freelancers do differently to land more clients.",
-    readTime: "10 min",
+      "Discover the 10 critical mistakes destroying your Upwork win rate. Learn exactly what top-rated freelancers do differently to land high-paying clients consistently.",
+    readTime: "11 min",
     category: "Guides",
+  },
+  {
+    slug: "cold-email-for-freelancers",
+    title: "Cold Email Templates for Freelancers: Get Clients Without Platforms (2025)",
+    excerpt:
+      "Learn how to write cold emails that land freelance clients. Includes 7 proven templates, personalization techniques, and outreach strategies to win high-paying work without Upwork or Fiverr.",
+    readTime: "12 min",
+    category: "Outreach",
+  },
+  {
+    slug: "upwork-proposal-for-designers",
+    title: "Upwork Proposals for Designers: Win More Creative Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win graphic design, UI/UX, branding, and illustration jobs. Templates, examples, and niche-specific strategies.",
+    readTime: "11 min",
+    category: "Designers",
   },
   {
     slug: "upwork-proposal-templates",
@@ -44,8 +160,29 @@ const posts = [
 ];
 
 export default function BlogIndex() {
+  const siteUrl = "https://proposalai.top";
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "ProposalAI Blog - Upwork Proposal Tips & Freelance Guides",
+    description:
+      "Proven strategies, templates, and examples to help freelancers win more contracts on Upwork and Fiverr.",
+    url: `${siteUrl}/blog`,
+    inLanguage: "en-US",
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <BreadcrumbSchema crumbs={[
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog" },
+      ]} />
+      <Script
+        id="jsonld-collection-blog"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+        strategy="afterInteractive"
+      />
       <header className="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">

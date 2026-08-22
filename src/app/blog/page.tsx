@@ -12,6 +12,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "ai-upwork-proposals",
+    title: "AI for Upwork Proposals: Win More Jobs Without Sounding Robotic (2025)",
+    excerpt:
+      "Learn the 70/30 AI + Human framework for writing Upwork proposals 10x faster. Exact prompts, the 5-step workflow, and how to avoid the robotic proposals clients delete instantly.",
+    readTime: "13 min",
+    category: "AI Tools",
+    date: "2025-08-22",
+  },
+  {
     slug: "upwork-proposal-for-developers",
     title: "Upwork Proposals for Developers: Win More Web Dev Jobs (2025)",
     excerpt:

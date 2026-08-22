@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 const siteUrl = "https://proposalai.top";
 
 const blogSlugs = [
+  "ai-upwork-proposals",
   "freelance-contract-templates",
   "upwork-proposal-mistakes",
   "upwork-proposal-for-designers",

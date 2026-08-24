@@ -10,6 +10,14 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-for-designers",
+    title: "Upwork Proposals for Designers: Win More Creative Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win graphic design, UI/UX, branding, and illustration jobs. Includes a real template, niche tactics, portfolio proof, and pricing for design jobs.",
+    readTime: "12 min",
+    category: "Designers",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:

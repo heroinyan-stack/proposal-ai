@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "freelance-niche-selection",
+    title: "How to Choose a Freelance Niche: Specialize Your Way to Higher Rates (2026)",
+    excerpt:
+      "Stop competing with 50 generalists per job. Learn the 7-step framework for choosing a profitable niche, 2026 rate benchmarks for 8 high-demand niches, and how to pivot from generalist to specialist without losing income.",
+    readTime: "14 min",
+    category: "Strategy",
+    date: "August 2026",
+  },
+  {
     slug: "upwork-proposal-for-writers",
     title: "Upwork Proposals for Writers: Win More Content Jobs (2025)",
     excerpt:

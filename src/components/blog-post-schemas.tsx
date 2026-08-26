@@ -256,6 +256,24 @@ const FAQ_BY_SLUG: Record<string, FaqItem[]> = {
       answer: "Price per project (per article), not per word, for 3 reasons: (1) You get paid for research time, not just typing. (2) Per-word pricing punishes you for being concise. (3) It's easier for clients to budget. Rule of thumb: if you were pricing per word, multiply by 400-600 words, then add 30% for revisions and client calls. Round up to a clean number."
     },
   ],
+  "freelance-niche-selection": [
+    {
+      question: "How do I choose a freelance niche when I have no experience?",
+      answer: "Start with any paid or unpaid work you've already delivered — projects for friends, university work, spec work, internships. Find the overlap between what you've actually done and what people pay for. Then run the 30-day validation test from this guide: update your profile, apply to 3-5 niche jobs per day, and take one small, discounted project for the review and case study."
+    },
+    {
+      question: "What if I already have clients in multiple niches? Should I abandon them?",
+      answer: "No. Pivot in phases. Phase 1: keep all existing clients, but route all NEW business toward the niche. Phase 2: once 70% of your income is from the niche, give generalist clients 30 days notice and a referral to a trusted peer. Never cold-turkey existing clients — the cash flow dip makes most people abandon the pivot entirely."
+    },
+    {
+      question: "How do I know if my niche is too narrow or too broad?",
+      answer: "Too broad: 50+ proposals per job, you can't use the same opening line twice, and top sellers charge under $40/hr. Too narrow: fewer than 15 active jobs on Upwork in 30 days, and fewer than 3 freelancers you can find charging $100+/hr. The sweet spot: 15-50 proposals per job, 40+ posts/month, and multiple specialists at $100+/hr proving the ceiling exists."
+    },
+    {
+      question: "How long should I commit to a niche before deciding it doesn't work?",
+      answer: "90 days minimum. Upwork's algorithm needs 2-4 weeks to re-learn your profile and surface relevant jobs; human networks take 6-10 weeks to circulate your new positioning. Your first 30 days will almost always look underwhelming even for a great niche. Judge the pivot at day 90, not day 21."
+    },
+  ],
 };
 
 // ============= Article meta 配置（按 slug 映射）=============
@@ -374,6 +392,12 @@ const ARTICLE_META: Record<string, ArticleMeta> = {
     description: "Learn how to write Upwork proposals that win blog writing, copywriting, technical writing, SEO content, and ghostwriting jobs. Includes templates, real examples, and niche-specific strategies for writers.",
     publishedTime: "2025-07-08",
     keywords: ["upwork proposal for writers", "upwork content writing proposal", "upwork copywriting proposal", "upwork writer cover letter", "win upwork writing jobs", "freelance writer proposal template", "upwork blog writer proposal", "upwork ghostwriter proposal"],
+  },
+  "freelance-niche-selection": {
+    title: "How to Choose a Freelance Niche: Specialize Your Way to Higher Rates (2026)",
+    description: "Stop competing with 50 generalists per job. Learn the 7-step framework for choosing a profitable freelance niche, 2026 rate benchmarks for 8 high-demand niches, and how to pivot from generalist to specialist without losing income.",
+    publishedTime: "2026-08-26",
+    keywords: ["freelance niche selection", "how to choose a freelance niche", "profitable freelance niches 2026", "freelance specialization", "best freelance niches", "niche down freelance", "freelance niche ideas", "become a specialist freelancer"],
   },
 };
 

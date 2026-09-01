@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-response-rate",
+    title: "Upwork Proposal Response Rate: Why You're Stuck at 2-4% (2025)",
+    excerpt:
+      "The average Upwork reply rate in 2025 is 15%, but most freelancers sit at 2-4%. Learn why, how to diagnose view rate vs reply rate, and the 21-day plan to hit 15%+.",
+    readTime: "10 min",
+    category: "Strategy",
+    date: "September 2025",
+  },
+  {
     slug: "freelance-niche-selection",
     title: "How to Choose a Freelance Niche: Specialize Your Way to Higher Rates (2026)",
     excerpt:

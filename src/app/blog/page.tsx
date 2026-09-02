@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-client-red-flags",
+    title: "20 Red Flags to Avoid on Upwork: Skip These Clients Immediately (2025)",
+    excerpt:
+      "Learn the 20 red flags that signal toxic Upwork clients — before you bid or accept. Save yourself 100+ hours of grief and $3,000+ per year.",
+    readTime: "11 min",
+    category: "Warning Signs",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-proposal-response-rate",
     title: "Upwork Proposal Response Rate: Why You're Stuck at 2-4% (2025)",
     excerpt:

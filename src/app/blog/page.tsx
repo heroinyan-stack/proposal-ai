@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-interview-questions",
+    title: "How to Answer Upwork Interview Questions: 20 Questions & Winning Responses (2025)",
+    excerpt:
+      "Your proposal got a reply — now the interview. Master the 20 most common Upwork interview questions with proven response frameworks, real examples, and the answers that turn interviews into contracts.",
+    readTime: "12 min",
+    category: "Interviews",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-client-red-flags",
     title: "20 Red Flags to Avoid on Upwork: Skip These Clients Immediately (2025)",
     excerpt:

@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-job-success-score",
+    title: "Upwork Job Success Score: How to Get 100% JSS and Keep It (2025)",
+    excerpt:
+      "Your Upwork Job Success Score controls your visibility, invites, and Top Rated badge. Learn exactly how JSS is calculated, how to hit 100%, and how to recover if it drops.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-interview-questions",
     title: "How to Answer Upwork Interview Questions: 20 Questions & Winning Responses (2025)",
     excerpt:

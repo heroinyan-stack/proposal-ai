@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "how-to-quit-job-for-freelancing",
+    title: "How to Quit Your Job for Freelancing: A 6-Month Plan (2025)",
+    excerpt:
+      "Safe step-by-step plan to quit your 9-to-5 and go full-time freelance. Build clients, replace your salary, and escape office life — without the risk.",
+    readTime: "13 min",
+    category: "Career",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-job-success-score",
     title: "Upwork Job Success Score: How to Get 100% JSS and Keep It (2025)",
     excerpt:

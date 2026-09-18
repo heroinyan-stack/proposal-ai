@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-boosted-proposals",
+    title: "Upwork Boosted Proposals, Uma & Proposal Insights: A 2026 Freelancer's Guide",
+    excerpt:
+      "Upwork's new AI features — Boosted Proposals, Uma, Proposal Insights, and Instant Interviews — are changing how freelancers win jobs. Learn what each does and how to use them without wasting Connects.",
+    readTime: "14 min",
+    category: "Guides",
+    date: "September 2026",
+  },
+  {
     slug: "how-to-quit-job-for-freelancing",
     title: "How to Quit Your Job for Freelancing: A 6-Month Plan (2025)",
     excerpt:

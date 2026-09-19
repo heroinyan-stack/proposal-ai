@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-portfolio-tips",
+    title: "How to Build an Upwork Portfolio That Wins Clients (2025)",
+    excerpt:
+      "A weak portfolio kills your win rate before the client reads your proposal. Learn how to build a results-focused portfolio with 7 niche examples, spec-work strategies, and the 4 elements every item needs.",
+    readTime: "10 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-boosted-proposals",
     title: "Upwork Boosted Proposals, Uma & Proposal Insights: A 2026 Freelancer's Guide",
     excerpt:

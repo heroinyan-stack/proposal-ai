@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-retainer-clients",
+    title: "How to Get Retainer Clients on Upwork: Turn One-Off Jobs Into Recurring Income (2025)",
+    excerpt:
+      "Stop chasing one-off jobs. Learn the exact strategy to convert Upwork projects into monthly retainers — timing, pricing, templates, and the message that turns clients into recurring income.",
+    readTime: "11 min",
+    category: "Strategy",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-portfolio-tips",
     title: "How to Build an Upwork Portfolio That Wins Clients (2025)",
     excerpt:

@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-top-rated-plus",
+    title: "How to Get Top Rated Plus on Upwork: The Complete Guide (2025)",
+    excerpt:
+      "Top Rated Plus unlocks a 30% project bonus, higher search ranking, and bigger budgets. Learn the exact requirements and a 90-day plan to earn Upwork's highest freelancer badge.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-retainer-clients",
     title: "How to Get Retainer Clients on Upwork: Turn One-Off Jobs Into Recurring Income (2025)",
     excerpt:

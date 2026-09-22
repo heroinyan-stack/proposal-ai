@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-search-ranking",
+    title: "Upwork Search Ranking: How to Show Up First When Clients Search (2025)",
+    excerpt:
+      "40% of Upwork hires happen through search, not job postings. Learn how Upwork's 2025 algorithm works and the 13-step playbook to rank on page 1.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-top-rated-plus",
     title: "How to Get Top Rated Plus on Upwork: The Complete Guide (2025)",
     excerpt:

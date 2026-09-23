@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-follow-up",
+    title: "How to Follow Up on Upwork Proposals Without Being Annoying (2025)",
+    excerpt:
+      "Roughly 60% of clients who reply never hire anyone — and many ghosted proposals aren't rejections. Learn the exact timing, tone, and 3 copy-paste follow-up templates top freelancers use to recover silent leads.",
+    readTime: "11 min",
+    category: "Strategy",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-search-ranking",
     title: "Upwork Search Ranking: How to Show Up First When Clients Search (2025)",
     excerpt:

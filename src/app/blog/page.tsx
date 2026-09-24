@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "fiverr-levels-guide",
+    title: "Fiverr Levels Explained: How to Reach Level 1, Level 2 & Top Rated Seller (2025)",
+    excerpt:
+      "Exact 2025 requirements for every Fiverr seller level — New Seller, Level 1, Level 2, and Top Rated. Success score, ratings, orders, earnings, and a 90-day plan to level up fast.",
+    readTime: "11 min",
+    category: "Fiverr",
+    date: "September 2025",
+  },
+  {
     slug: "upwork-proposal-follow-up",
     title: "How to Follow Up on Upwork Proposals Without Being Annoying (2025)",
     excerpt:

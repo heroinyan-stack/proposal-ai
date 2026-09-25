@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/blog/fiverr-gig-seo`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/blog/fiverr-levels-guide`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "fiverr-gig-seo",
+    title: "Fiverr Gig SEO: How to Rank on the First Page (2025)",
+    excerpt:
+      "Master Fiverr gig SEO with proven strategies to rank higher in search results. Learn keyword optimization, gig title formulas, and algorithm hacks that top sellers use.",
+    readTime: "12 min",
+    category: "SEO",
+    date: "September 2025",
+  },
+  {
     slug: "fiverr-levels-guide",
     title: "Fiverr Levels Explained: How to Reach Level 1, Level 2 & Top Rated Seller (2025)",
     excerpt:

@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-hourly-vs-fixed-price",
+    title: "Upwork Hourly vs Fixed-Price: Which Contract Type Should You Choose? (2026)",
+    excerpt:
+      "Upwork hourly vs fixed-price compared for 2026 — payment protection, escrow, scope creep, and earnings. Use the 5-point checklist to pick the right contract type every time.",
+    readTime: "10 min",
+    category: "Guides",
+    date: "September 2026",
+  },
+  {
     slug: "fiverr-gig-seo",
     title: "Fiverr Gig SEO: How to Rank on the First Page (2025)",
     excerpt:

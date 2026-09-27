@@ -13,10 +13,177 @@ const posts = [
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:
-      "Avoid these 10 common Upwork proposal mistakes that cost freelancers jobs. Learn what top-rated freelancers do differently to win 40%+ more contracts.",
+      "Discover the 10 most common Upwork proposal mistakes that are silently killing your win rate. Learn exactly how to fix each one with actionable tips from top-rated freelancers.",
+    readTime: "11 min",
+    category: "Guides",
+    date: "August 2025",
+  },
+  {
+    slug: "upwork-hourly-vs-fixed-price",
+    title: "Upwork Hourly vs Fixed-Price: Which Contract Type Should You Choose? (2026)",
+    excerpt:
+      "Upwork hourly vs fixed-price compared for 2026 — payment protection, escrow, scope creep, and earnings. Use the 5-point checklist to pick the right contract type every time.",
+    readTime: "10 min",
+    category: "Guides",
+    date: "September 2026",
+  },
+  {
+    slug: "fiverr-gig-seo",
+    title: "Fiverr Gig SEO: How to Rank on the First Page (2025)",
+    excerpt:
+      "Master Fiverr gig SEO with proven strategies to rank higher in search results. Learn keyword optimization, gig title formulas, and algorithm hacks that top sellers use.",
     readTime: "12 min",
+    category: "SEO",
+    date: "September 2025",
+  },
+  {
+    slug: "fiverr-levels-guide",
+    title: "Fiverr Levels Explained: How to Reach Level 1, Level 2 & Top Rated Seller (2025)",
+    excerpt:
+      "Exact 2025 requirements for every Fiverr seller level — New Seller, Level 1, Level 2, and Top Rated. Success score, ratings, orders, earnings, and a 90-day plan to level up fast.",
+    readTime: "11 min",
+    category: "Fiverr",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-proposal-follow-up",
+    title: "How to Follow Up on Upwork Proposals Without Being Annoying (2025)",
+    excerpt:
+      "Roughly 60% of clients who reply never hire anyone — and many ghosted proposals aren't rejections. Learn the exact timing, tone, and 3 copy-paste follow-up templates top freelancers use to recover silent leads.",
+    readTime: "11 min",
     category: "Strategy",
-    date: "2025-09-27",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-search-ranking",
+    title: "Upwork Search Ranking: How to Show Up First When Clients Search (2025)",
+    excerpt:
+      "40% of Upwork hires happen through search, not job postings. Learn how Upwork's 2025 algorithm works and the 13-step playbook to rank on page 1.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-top-rated-plus",
+    title: "How to Get Top Rated Plus on Upwork: The Complete Guide (2025)",
+    excerpt:
+      "Top Rated Plus unlocks a 30% project bonus, higher search ranking, and bigger budgets. Learn the exact requirements and a 90-day plan to earn Upwork's highest freelancer badge.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-retainer-clients",
+    title: "How to Get Retainer Clients on Upwork: Turn One-Off Jobs Into Recurring Income (2025)",
+    excerpt:
+      "Stop chasing one-off jobs. Learn the exact strategy to convert Upwork projects into monthly retainers — timing, pricing, templates, and the message that turns clients into recurring income.",
+    readTime: "11 min",
+    category: "Strategy",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-portfolio-tips",
+    title: "How to Build an Upwork Portfolio That Wins Clients (2025)",
+    excerpt:
+      "A weak portfolio kills your win rate before the client reads your proposal. Learn how to build a results-focused portfolio with 7 niche examples, spec-work strategies, and the 4 elements every item needs.",
+    readTime: "10 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-boosted-proposals",
+    title: "Upwork Boosted Proposals, Uma & Proposal Insights: A 2026 Freelancer's Guide",
+    excerpt:
+      "Upwork's new AI features — Boosted Proposals, Uma, Proposal Insights, and Instant Interviews — are changing how freelancers win jobs. Learn what each does and how to use them without wasting Connects.",
+    readTime: "14 min",
+    category: "Guides",
+    date: "September 2026",
+  },
+  {
+    slug: "how-to-quit-job-for-freelancing",
+    title: "How to Quit Your Job for Freelancing: A 6-Month Plan (2025)",
+    excerpt:
+      "Safe step-by-step plan to quit your 9-to-5 and go full-time freelance. Build clients, replace your salary, and escape office life — without the risk.",
+    readTime: "13 min",
+    category: "Career",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-job-success-score",
+    title: "Upwork Job Success Score: How to Get 100% JSS and Keep It (2025)",
+    excerpt:
+      "Your Upwork Job Success Score controls your visibility, invites, and Top Rated badge. Learn exactly how JSS is calculated, how to hit 100%, and how to recover if it drops.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-interview-questions",
+    title: "How to Answer Upwork Interview Questions: 20 Questions & Winning Responses (2025)",
+    excerpt:
+      "Your proposal got a reply — now the interview. Master the 20 most common Upwork interview questions with proven response frameworks, real examples, and the answers that turn interviews into contracts.",
+    readTime: "12 min",
+    category: "Interviews",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-client-red-flags",
+    title: "20 Red Flags to Avoid on Upwork: Skip These Clients Immediately (2025)",
+    excerpt:
+      "Learn the 20 red flags that signal toxic Upwork clients — before you bid or accept. Save yourself 100+ hours of grief and $3,000+ per year.",
+    readTime: "11 min",
+    category: "Warning Signs",
+    date: "September 2025",
+  },
+  {
+    slug: "upwork-proposal-response-rate",
+    title: "Upwork Proposal Response Rate: Why You're Stuck at 2-4% (2025)",
+    excerpt:
+      "The average Upwork reply rate in 2025 is 15%, but most freelancers sit at 2-4%. Learn why, how to diagnose view rate vs reply rate, and the 21-day plan to hit 15%+.",
+    readTime: "10 min",
+    category: "Strategy",
+    date: "September 2025",
+  },
+  {
+    slug: "freelance-niche-selection",
+    title: "How to Choose a Freelance Niche: Specialize Your Way to Higher Rates (2026)",
+    excerpt:
+      "Stop competing with 50 generalists per job. Learn the 7-step framework for choosing a profitable niche, 2026 rate benchmarks for 8 high-demand niches, and how to pivot from generalist to specialist without losing income.",
+    readTime: "14 min",
+    category: "Strategy",
+    date: "August 2026",
+  },
+  {
+    slug: "upwork-proposal-for-writers",
+    title: "Upwork Proposals for Writers: Win More Content Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win blog writing, copywriting, technical writing, SEO content, and ghostwriting jobs. Includes a real template, clip strategy, pricing advice, and a writer-specific checklist.",
+    readTime: "12 min",
+    category: "Writers",
+  },
+  {
+    slug: "upwork-proposal-for-designers",
+    title: "Upwork Proposals for Designers: Win More Creative Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win graphic design, UI/UX, branding, and illustration jobs. Includes a real template, portfolio tips, pricing advice, and a designer-specific checklist.",
+    readTime: "12 min",
+    category: "Designers",
+  },
+  {
+    slug: "upwork-skills-test",
+    title: "Upwork Skills Tests: Do They Matter and Which to Take (2025)",
+    excerpt:
+      "Upwork Skills Tests can boost your profile visibility and win rate. Find out which tests are worth taking, how they affect your search ranking, and the best strategy to pass them.",
+    readTime: "10 min",
+    category: "Guides",
+  },
+  {
+    slug: "freelance-client-communication",
+    title: "Freelance Client Communication: Templates for Every Situation (2025)",
+    excerpt:
+      "Copy-paste client communication templates for freelancers — kickoff, scope creep, delays, unresponsive clients, overdue invoices, and more. Keep clients happy and get paid on time.",
+    readTime: "9 min",
+    category: "Templates",
   },
   {
     slug: "upwork-proposal-templates",
@@ -41,6 +208,86 @@ const posts = [
       "Complete guide for beginners: from profile optimization to landing your first client. No experience? No problem. Follow this exact roadmap.",
     readTime: "12 min",
     category: "Guides",
+  },
+  {
+    slug: "upwork-proposal-for-developers",
+    title: "Upwork Proposals for Developers: Win More Web Dev Jobs (2025)",
+    excerpt:
+      "Learn how to write Upwork proposals that win web development, mobile app, and software engineering jobs. Includes templates, real examples, and niche-specific strategies for developers.",
+    readTime: "11 min",
+    category: "Developers",
+  },
+  {
+    slug: "upwork-job-invitation-response",
+    title: "How to Respond to Upwork Job Invitations (Templates Included)",
+    excerpt:
+      "Learn how to respond to Upwork job invitations like a pro. Copy-paste templates for accepting, negotiating, declining, and turning invites into long-term clients.",
+    readTime: "9 min",
+    category: "Templates",
+  },
+  {
+    slug: "upwork-connects-tips",
+    title: "How to Use Upwork Connects Wisely (Complete Guide)",
+    excerpt:
+      "Master Upwork Connects: how many you get, when to spend them, which jobs to bid on, and proven strategies to maximize your ROI. Stop wasting connects.",
+    readTime: "9 min",
+    category: "Guides",
+  },
+  {
+    slug: "upwork-profile-summary-examples",
+    title: "How to Write an Upwork Profile Summary That Gets Clients",
+    excerpt:
+      "Your Upwork profile summary is your first impression. Learn the 5 elements of a great summary with examples for 5 different career paths.",
+    readTime: "10 min",
+    category: "Examples",
+  },
+  {
+    slug: "upwork-vs-fiverr",
+    title: "Upwork vs Fiverr: Which Platform Is Better for Freelancers in 2025?",
+    excerpt:
+      "Full comparison of fees, project types, client quality, and competition. Find out which platform fits your freelance business in 2025.",
+    readTime: "10 min",
+    category: "Guides",
+  },
+  {
+    slug: "freelance-pricing-strategies",
+    title: "Freelance Pricing Strategies: How to Charge What You're Worth",
+    excerpt:
+      "Stop undercharging. Learn hourly vs fixed vs value-based pricing, rate benchmarks for 2025, and exactly how to raise your rates without losing clients.",
+    readTime: "11 min",
+    category: "Guides",
+  },
+  {
+    slug: "fiverr-gig-description-examples",
+    title: "7 Fiverr Gig Description Examples That Convert (2025)",
+    excerpt:
+      "See real Fiverr gig description templates for logo design, development, SEO, video editing, and more. Learn exactly why each one converts.",
+    readTime: "9 min",
+    category: "Examples",
+  },
+  {
+    slug: "fiverr-gig-promotion",
+    title: "How to Promote Your Fiverr Gig: 12 Proven Strategies",
+    excerpt:
+      "12 proven strategies to promote your Fiverr gig and get more orders. From on-platform SEO optimization to social media marketing and community outreach.",
+    readTime: "10 min",
+    category: "Guides",
+  },
+  {
+    slug: "cold-email-for-freelancers",
+    title: "Cold Email Templates for Freelancers: Get Clients Without Platforms",
+    excerpt:
+      "Learn how to write cold emails that land freelance clients. Includes 7 proven templates, personalization techniques, and outreach strategies to win high-paying work without Upwork or Fiverr.",
+    readTime: "12 min",
+    category: "Templates",
+  },
+  {
+    slug: "freelance-contract-templates",
+    title: "Freelance Contract Templates: Protect Yourself on Every Project",
+    excerpt:
+      "Copy-paste freelance contract templates for fixed-price, hourly, and retainer projects. Covers payment terms, IP transfer, kill fees, scope creep, and the 7 clauses every freelancer needs.",
+    readTime: "10 min",
+    category: "Templates",
   },
 ];
 

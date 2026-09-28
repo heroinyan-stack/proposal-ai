@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-instant-match",
+    title: "Upwork Instant Match: How to Get Automatically Matched with Clients (2026)",
+    excerpt:
+      "Instant Match can deliver 10x more job invitations — but only if you set it up correctly. Learn the algorithm factors, setup steps, and a real case study from 2 to 47 invites/month.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "September 2026",
+  },
+  {
     slug: "upwork-proposal-mistakes",
     title: "10 Upwork Proposal Mistakes That Kill Your Win Rate (2025)",
     excerpt:

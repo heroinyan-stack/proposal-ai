@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-proposal-first-sentence",
+    title: "Upwork Proposal First Sentence: 12 Hooks That Win Jobs (2026)",
+    excerpt:
+      "Your Upwork proposal first sentence decides whether the client reads the rest. 12 proven opening-line hooks with real examples, the 3-part formula behind them, and the openers that kill your win rate.",
+    readTime: "11 min",
+    category: "Guides",
+    date: "September 2026",
+  },
+  {
     slug: "upwork-instant-match",
     title: "Upwork Instant Match: How to Get Automatically Matched with Clients (2026)",
     excerpt:

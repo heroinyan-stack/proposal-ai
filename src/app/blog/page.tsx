@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-video-proposal",
+    title: "Upwork Video Proposals: How Loom Videos 3x Your Win Rate (2026)",
+    excerpt:
+      "Do Loom video proposals actually win more Upwork jobs? 2026 data says yes — 3x higher response rates. Learn when to use video, the 60-second script, and the setup that doesn't look amateur.",
+    readTime: "10 min",
+    category: "Strategy",
+    date: "October 2026",
+  },
+  {
     slug: "upwork-proposal-first-sentence",
     title: "Upwork Proposal First Sentence: 12 Hooks That Win Jobs (2026)",
     excerpt:

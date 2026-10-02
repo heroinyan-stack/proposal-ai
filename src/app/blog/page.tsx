@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "fiverr-neo-algorithm-update",
+    title: "Fiverr Neo Algorithm 2026: How the New Ranking Update Changes Gig SEO",
+    excerpt:
+      "Fiverr's Neo update (January 2026) is the biggest ranking change since 2019. Learn the 7 new ranking signals, the Success Score, real-time order monitoring, and how to optimize your gig for Neo.",
+    readTime: "12 min",
+    category: "Fiverr",
+    date: "October 2026",
+  },
+  {
     slug: "upwork-video-proposal",
     title: "Upwork Video Proposals: How Loom Videos 3x Your Win Rate (2026)",
     excerpt:

@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "fiverr-success-score",
+    title: "Fiverr Success Score Explained: How to Boost Your Score and Get More Orders (2026)",
+    excerpt:
+      "Fiverr's new Success Score (part of the Neo algorithm) directly controls your gig visibility. Learn exactly how it's calculated, what hurts it, and the 8-step playbook to boost your score fast.",
+    readTime: "12 min",
+    category: "Fiverr",
+    date: "October 2026",
+  },
+  {
     slug: "fiverr-neo-algorithm-update",
     title: "Fiverr Neo Algorithm 2026: How the New Ranking Update Changes Gig SEO",
     excerpt:

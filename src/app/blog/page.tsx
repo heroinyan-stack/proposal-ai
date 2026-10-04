@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-project-catalog",
+    title: "Upwork Project Catalog: How to Sell Pre-Packaged Services on Autopilot (2026)",
+    excerpt:
+      "A complete 2026 guide to the Upwork Project Catalog — what it is, the 6-step listing walkthrough, 3-tier pricing with real examples, and how to combine it with proposals for a full client pipeline.",
+    readTime: "12 min",
+    category: "Guides",
+    date: "October 2026",
+  },
+  {
     slug: "fiverr-success-score",
     title: "Fiverr Success Score Explained: How to Boost Your Score and Get More Orders (2026)",
     excerpt:

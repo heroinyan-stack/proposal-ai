@@ -10,6 +10,15 @@ export const metadata = {
 
 const posts = [
   {
+    slug: "upwork-rising-talent",
+    title: "Upwork Rising Talent: How to Earn the Badge and Get More Jobs (2025)",
+    excerpt:
+      "Learn exactly how to get the Upwork Rising Talent badge in 2025. Requirements, step-by-step strategy, and how the badge boosts your profile visibility and win rate.",
+    readTime: "11 min",
+    category: "Guides",
+    date: "October 2025",
+  },
+  {
     slug: "upwork-project-catalog",
     title: "Upwork Project Catalog: How to Sell Pre-Packaged Services on Autopilot (2026)",
     excerpt:
